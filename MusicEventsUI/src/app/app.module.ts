@@ -6,11 +6,18 @@ import {RouterModule, Routes} from "@angular/router";
 import {LandingComponent} from './landing/landing.component';
 import { EventsComponent } from './events/events.component';
 import { ProfileComponent } from './profile/profile.component';
+import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './auth/login/login.component';
+import { SignUpComponent } from './auth/signup/signup.component';
+import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
   {path: 'events', component: EventsComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'signup', component: SignUpComponent},
+  {path: 'login', component: LoginComponent}
 ]
 
 @NgModule({
@@ -18,10 +25,15 @@ const routes: Routes = [
     AppComponent,
     LandingComponent,
     EventsComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

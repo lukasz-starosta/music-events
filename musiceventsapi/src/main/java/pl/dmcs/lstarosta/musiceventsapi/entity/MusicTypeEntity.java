@@ -1,4 +1,4 @@
-package entity;
+package pl.dmcs.lstarosta.musiceventsapi.entity;
 
 import javax.persistence.*;
 

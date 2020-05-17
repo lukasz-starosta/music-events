@@ -1,10 +1,10 @@
-package entity;
+package pl.dmcs.lstarosta.musiceventsapi.entity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "city", schema = "public", catalog = "MusicEvents")
-public class CityEntity {
+@Table(name = "role", schema = "public", catalog = "MusicEvents")
+public class RoleEntity {
     private int id;
     private String name;
 
@@ -19,7 +19,7 @@ public class CityEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 40)
+    @Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
@@ -33,7 +33,7 @@ public class CityEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        CityEntity that = (CityEntity) o;
+        RoleEntity that = (RoleEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;

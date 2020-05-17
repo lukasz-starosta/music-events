@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="Added basic auth functionality">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_2_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_2_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/services/ILogin.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/services/ISignUp.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/services/auth.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/services/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/request/LoginForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/request/SignUpForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/response/ResponseMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/security/services/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/security/services/UserPrinciple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/CityEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/CityEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/EventEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/EventEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/MusicTypeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/MusicTypeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/RoleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/TicketEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/TicketEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +102,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -83,16 +116,30 @@
       </set>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1bqPar4w3vZvghi2K8Qul22zImW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="JPA.DatabaseSchemaImportDialog" value="83d0b2a2-1064-4ae6-b997-056afb7b3685" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -108,12 +155,15 @@
     <property name="ts.external.directory.path" value="C:\Users\lstar\Desktop\Uni\6. Semestr\IWA\MusicEvents\MusicEventsUI\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="pl.dmcs.lstarosta.musiceventsapi" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="entity" />
       <recent name="pl.dmcs.lstarosta.musiceventsapi" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (MusicEventsUI)">
+  <component name="RunManager" selected="Spring Boot.MusiceventsapiApplication">
     <configuration name="E2E Tests (MusicEventsUI)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/MusicEventsUI/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -213,7 +263,7 @@
       <workItem from="1589356719130" duration="3641000" />
       <workItem from="1589614820361" duration="853000" />
       <workItem from="1589615747537" duration="672000" />
-      <workItem from="1589700374017" duration="871000" />
+      <workItem from="1589700374017" duration="7019000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -229,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589616376092</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added a few basic routes">
+      <created>1589701512006</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589701512006</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,12 +298,15 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/MusicEventsUI" />
     </ignored-roots>
     <MESSAGE value="Connected a complete Postgres database to the project" />
     <MESSAGE value="Generated Persistence entities" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generated Persistence entities" />
+    <MESSAGE value="Added a few basic routes" />
+    <MESSAGE value="Added basic auth functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic auth functionality" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -269,30 +329,55 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="630" y="63" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589616246482" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1589616374980">
+    <state x="564" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1589701562893">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="564" y="450" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701562893" />
+    <state x="756" y="405" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1589701589120">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="756" y="405" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701589120" />
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1589707433550">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707433550" />
     <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1589616374980" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1589701481386">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1589707403137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707403137" />
     <state width="1293" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1589701481386">
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1589707403137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707403137" />
     <state width="1293" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1589701481386">
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1589707403137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707403137" />
     <state width="1293" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546901" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1589701481386">
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1589707403137">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707403137" />
     <state width="1293" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom" timestamp="1589707398186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707398186" />
+    <state width="1877" height="285" key="GridCell.Tab.1.center" timestamp="1589707398186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707398186" />
+    <state width="1877" height="285" key="GridCell.Tab.1.left" timestamp="1589707398186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707398186" />
+    <state width="1877" height="285" key="GridCell.Tab.1.right" timestamp="1589707398186">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707398186" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589615533766">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -314,13 +399,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="330" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589615980021" />
+    <state x="656" y="257" width="619" height="536" key="find.popup" timestamp="1589707058889">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="656" y="257" width="619" height="536" key="find.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707058889" />
     <state x="343" y="145" width="1235" height="564" key="new project wizard" timestamp="1589357307134">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="343" y="145" width="1235" height="564" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1589357307134" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1589700772297">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1589706945569">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700772297" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
   </component>
 </project>

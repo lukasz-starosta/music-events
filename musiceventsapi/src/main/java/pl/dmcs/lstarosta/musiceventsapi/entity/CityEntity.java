@@ -1,14 +1,12 @@
-package entity;
+package pl.dmcs.lstarosta.musiceventsapi.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
-@Table(name = "event", schema = "public", catalog = "MusicEvents")
-public class EventEntity {
+@Table(name = "city", schema = "public", catalog = "MusicEvents")
+public class CityEntity {
     private int id;
     private String name;
-    private Date date;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -21,7 +19,7 @@ public class EventEntity {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false, length = 40)
     public String getName() {
         return name;
     }
@@ -30,26 +28,15 @@ public class EventEntity {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "date", nullable = false)
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        EventEntity that = (EventEntity) o;
+        CityEntity that = (CityEntity) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (date != null ? !date.equals(that.date) : that.date != null) return false;
 
         return true;
     }
@@ -58,7 +45,6 @@ public class EventEntity {
     public int hashCode() {
         int result = id;
         result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
     }
 }

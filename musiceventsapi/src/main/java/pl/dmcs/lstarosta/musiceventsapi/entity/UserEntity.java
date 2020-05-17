@@ -1,6 +1,8 @@
-package entity;
+package pl.dmcs.lstarosta.musiceventsapi.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "user", schema = "public", catalog = "MusicEvents")
@@ -11,8 +13,19 @@ public class UserEntity {
     private String firstName;
     private String email;
 
+    public UserEntity() {
+
+    }
+
+    public UserEntity(@NotBlank @Size(min = 3, max = 50) String email, @NotBlank @Size(min = 6, max = 100) String password, @NotBlank String firstName, @NotBlank String lastName) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     @Basic
-    @Column(name = "password", nullable = false, length = 20)
+    @Column(name = "password", nullable = false, length = 100)
     public String getPassword() {
         return password;
     }
@@ -32,6 +45,7 @@ public class UserEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
