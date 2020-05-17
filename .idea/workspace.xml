@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="Generated Persistence entities">
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/CityEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/EventEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/MusicTypeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/RoleEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/TicketEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/entity/UserEntity.java" afterDir="false" />
+    <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +104,8 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Users\lstar\Desktop\Uni\6. Semestr\IWA\MusicEvents\MusicEventsUI\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -213,7 +212,8 @@
       <updated>1589356716433</updated>
       <workItem from="1589356719130" duration="3641000" />
       <workItem from="1589614820361" duration="853000" />
-      <workItem from="1589615747537" duration="569000" />
+      <workItem from="1589615747537" duration="672000" />
+      <workItem from="1589700374017" duration="871000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -222,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589615894740</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Generated Persistence entities">
+      <created>1589616376092</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589616376092</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -234,6 +241,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/MusicEventsUI" />
+    </ignored-roots>
     <MESSAGE value="Connected a complete Postgres database to the project" />
     <MESSAGE value="Generated Persistence entities" />
     <option name="LAST_COMMIT_MESSAGE" value="Generated Persistence entities" />
@@ -259,38 +269,43 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="630" y="63" key="#com.intellij.jpa.generation.ui.DatabaseSchemaImportDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589616246482" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1589616344393">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1589616374980">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1589616344393" />
-    <state width="1293" height="285" key="GridCell.Tab.0.bottom" timestamp="1589615546902">
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1589616374980" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1589701481386">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
     <state width="1293" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
-    <state width="1293" height="285" key="GridCell.Tab.0.center" timestamp="1589615546902">
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1589701481386">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
     <state width="1293" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
-    <state width="1293" height="285" key="GridCell.Tab.0.left" timestamp="1589615546901">
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1589701481386">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
     <state width="1293" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546901" />
-    <state width="1293" height="285" key="GridCell.Tab.0.right" timestamp="1589615546902">
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1589701481386">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589701481386" />
     <state width="1293" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1589615546902" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1589615533766">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1920.1050@0.0.1920.1050" timestamp="1589615533766" />
-    <state x="440" y="99" key="SettingsEditor" timestamp="1589615382536">
+    <state x="440" y="99" key="SettingsEditor" timestamp="1589700971276">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700971276" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1589615382536" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1589357771003">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1589616380937">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1589357771003" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1589616380937" />
     <state x="776" y="303" key="chooseDestDirectoryDialog" timestamp="1589616128618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -303,5 +318,9 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="343" y="145" width="1235" height="564" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1589357307134" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1589700772297">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700772297" />
   </component>
 </project>
