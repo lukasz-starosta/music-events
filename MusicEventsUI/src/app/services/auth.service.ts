@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {ISignUp} from "./ISignUp";
 import {ILogin} from "./ILogin";
+import {IJWTResponse} from "./IJWTResponse";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -19,8 +20,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  login(credentials: ILogin): Observable<string> {
-    return this.http.post<string>(this.loginUrl, credentials, httpOptions);
+  login(credentials: ILogin): Observable<IJWTResponse> {
+    return this.http.post<IJWTResponse>(this.loginUrl, credentials, httpOptions);
   }
 
   signUp(info: ISignUp): Observable<string> {

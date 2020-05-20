@@ -11,6 +11,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/signup/signup.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
+import {httpInterceptorProviders} from "./services/interceptor.service";
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
@@ -36,7 +37,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {

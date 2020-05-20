@@ -27,6 +27,7 @@ public class UserPrinciple implements UserDetails {
     }
 
     public static UserPrinciple build(UserEntity user) {
+        // TODO: change the roles here
         List<GrantedAuthority> authorities = new ArrayList<>(Collections.singleton(new SimpleGrantedAuthority("user")));
 
         return new UserPrinciple(

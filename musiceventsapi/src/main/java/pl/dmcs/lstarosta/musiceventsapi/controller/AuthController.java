@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import pl.dmcs.lstarosta.musiceventsapi.entity.UserEntity;
 import pl.dmcs.lstarosta.musiceventsapi.message.request.LoginForm;
 import pl.dmcs.lstarosta.musiceventsapi.message.request.SignUpForm;
+import pl.dmcs.lstarosta.musiceventsapi.message.response.JwtResponse;
 import pl.dmcs.lstarosta.musiceventsapi.message.response.ResponseMessage;
 import pl.dmcs.lstarosta.musiceventsapi.repository.UserRepository;
+import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtProvider;
+
 import javax.validation.Valid;
 
 @RestController
@@ -30,15 +33,19 @@ public class AuthController {
     @Autowired
     PasswordEncoder passwordEncoder;
 
+    @Autowired
+    JwtProvider jwtProvider;
+
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        String jwt = jwtProvider.generateJwtToken(authentication);
         UserDetails userDetails = (UserDetails) ((Authentication) authentication).getPrincipal();
 
-        return ResponseEntity.ok(new ResponseMessage("Logged in as" + userDetails.getUsername()));
+        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
     @PostMapping("/signup")
