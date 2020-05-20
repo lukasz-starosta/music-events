@@ -11,7 +11,7 @@ export class TokenStorageService {
   private roles: Array<string> = [];
   constructor() { }
 
-  signOut() {
+  logout() {
     window.sessionStorage.clear();
   }
 

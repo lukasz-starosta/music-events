@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.reloadPage();
       },
       error => {
         console.log(error);
@@ -46,7 +45,8 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  reloadPage() {
-    window.location.reload();
+  logout() {
+    this.authService.logout();
+    this.isLoggedIn = false;
   }
 }
