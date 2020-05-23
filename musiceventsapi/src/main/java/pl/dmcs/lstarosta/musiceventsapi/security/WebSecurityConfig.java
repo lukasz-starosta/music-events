@@ -3,6 +3,7 @@ package pl.dmcs.lstarosta.musiceventsapi.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Role;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -13,6 +14,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import pl.dmcs.lstarosta.musiceventsapi.enums.RoleEnum;
 import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtAuthEntryPoint;
 import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtAuthTokenFilter;
 import pl.dmcs.lstarosta.musiceventsapi.security.services.UserDetailsServiceImpl;
@@ -55,6 +57,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable().
                 authorizeRequests()
                 .antMatchers("/restApi/auth/**").permitAll()
+                // TODO: implement when working with requests
+//                .antMatchers("/restApi/users").hasRole(RoleEnum.admin.name())
+//                .antMatchers("/restApi/profile").hasRole(RoleEnum.user.name())
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);

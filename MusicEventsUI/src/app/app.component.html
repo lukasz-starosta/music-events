@@ -2,11 +2,19 @@
 <br>
 <a [routerLink]="['/events']">Events</a>
 <br>
-<a [routerLink]="['/profile']">Profile</a>
-<br>
 <a [routerLink]="['/login']">Login/Logout</a>
-<br>
-<a [routerLink]="['/signup']">Sign up</a>
+<div *ngIf="authority === 'user'">
+  <br>
+  <a [routerLink]="['/profile']">Profile</a>
+</div>
+<div *ngIf="!authority">
+  <br>
+  <a [routerLink]="['/signup']">Sign up</a>
+</div>
+<div *ngIf="authority === 'admin'">
+  <br>
+  <a [routerLink]="['/users']">Users</a>
+</div>
 
 <main>
   <router-outlet></router-outlet>

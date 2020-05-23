@@ -12,13 +12,15 @@ import { SignUpComponent } from './auth/signup/signup.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {httpInterceptorProviders} from "./services/interceptor.service";
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
   {path: 'events', component: EventsComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'users', component: UsersComponent},
   {path: 'signup', component: SignUpComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const routes: Routes = [
     EventsComponent,
     ProfileComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
