@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ILogin} from "../../services/ILogin";
 import {AuthService} from "../../services/auth.service";
 import {TokenStorageService} from "../../services/token-storage.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: ILogin;
 
-  constructor(private  authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private  authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -39,6 +40,8 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
+
+        this.router.navigateByUrl('/app').catch(e => console.error(e));
       },
       error => {
         console.log(error);

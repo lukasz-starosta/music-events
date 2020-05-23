@@ -4,23 +4,37 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {RouterModule, Routes} from "@angular/router";
 import {LandingComponent} from './landing/landing.component';
-import { EventsComponent } from './events/events.component';
-import { ProfileComponent } from './profile/profile.component';
+import {EventsComponent} from './events/events.component';
+import {ProfileComponent} from './profile/profile.component';
 import {HttpClientModule} from "@angular/common/http";
-import { LoginComponent } from './auth/login/login.component';
-import { SignUpComponent } from './auth/signup/signup.component';
+import {LoginComponent} from './auth/login/login.component';
+import {SignUpComponent} from './auth/signup/signup.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {httpInterceptorProviders} from "./services/interceptor.service";
-import { UsersComponent } from './users/users.component';
+import {UsersComponent} from './users/users.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {LayoutComponent} from './layout/layout.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 const routes: Routes = [
-  {path: '', component: LandingComponent},
-  {path: 'events', component: EventsComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'users', component: UsersComponent},
-  {path: 'signup', component: SignUpComponent},
-  {path: 'login', component: LoginComponent},
+  {
+    path: '', component: LandingComponent,
+  },
+  {
+    path: 'app', component: LayoutComponent,
+    children:
+      [
+        {path: 'events', component: EventsComponent},
+        {path: 'profile', component: ProfileComponent},
+        {path: 'users', component: UsersComponent},
+      ]
+  }, {path: '**', redirectTo: ''}
 ]
 
 @NgModule({
@@ -32,13 +46,21 @@ const routes: Routes = [
     LoginComponent,
     SignUpComponent,
     UsersComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatTabsModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

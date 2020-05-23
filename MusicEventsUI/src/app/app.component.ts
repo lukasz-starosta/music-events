@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {TokenStorageService} from "./services/token-storage.service";
 
 @Component({
   selector: 'app-root',
@@ -8,26 +7,12 @@ import {TokenStorageService} from "./services/token-storage.service";
 })
 export class AppComponent implements OnInit {
   title = 'Welcome | MEIWA';
-  private roles: string[];
-  private authority: string;
 
-  constructor(private tokenStorage: TokenStorageService) {
+
+  constructor() {
   }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.roles = this.tokenStorage.getAuthorities();
-      this.roles.every(role => {
-        if (role === 'admin') {
-          this.authority = 'admin';
-          return false;
-        }
-        this.authority = 'user';
-        return true;
-      });
-    } else {
-      this.authority = '';
-      this.roles = [''];
-    }
+
   }
 }

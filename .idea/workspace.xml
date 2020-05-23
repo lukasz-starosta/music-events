@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/users/users.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/users/users.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/users/users.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/users/users.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/assets/background.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/landing/landing.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/landing/landing.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/landing/landing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/landing/landing.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +178,7 @@
       <recent name="C:\Users\lstar\Desktop\Uni\6. Semestr\IWA\MusicEvents\musiceventsapi\src\main\java\pl\dmcs\lstarosta\musiceventsapi\security" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MusiceventsapiApplication">
+  <component name="RunManager" selected="npm.Angular CLI Server (MusicEventsUI)">
     <configuration name="E2E Tests (MusicEventsUI)" type="JavaScriptTestRunnerProtractor">
       <config-file value="$PROJECT_DIR$/MusicEventsUI/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
@@ -271,7 +282,7 @@
       <workItem from="1589792657905" duration="1239000" />
       <workItem from="1589964835277" duration="39000" />
       <workItem from="1589965020020" duration="3249000" />
-      <workItem from="1589984753935" duration="6812000" />
+      <workItem from="1589984753935" duration="15038000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -322,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590229928017</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added some better auth on client">
+      <created>1590232648381</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590232648381</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added some better auth on client">
+      <created>1590232739556</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590232739556</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +371,8 @@
     <MESSAGE value="Added JWT" />
     <MESSAGE value="Added missing files to VCS, added a possibility to logout" />
     <MESSAGE value="Added working Roles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added working Roles" />
+    <MESSAGE value="Added some better auth on client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some better auth on client" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -381,55 +407,55 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="362" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590228978961" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590232646295">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590232737869">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707456249" />
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590232646295" />
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590232737869" />
     <state x="739" y="279" key="FileChooserDialogImpl" timestamp="1590229020220">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="739" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590229020220" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1590241995417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590241995417" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1590241995417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590241995417" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1590241995417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590241995417" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1590241995417">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.1.bottom" timestamp="1590231721851">
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590241995417" />
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom" timestamp="1590233120177">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721851" />
-    <state width="1877" height="285" key="GridCell.Tab.1.center" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1590233120177" />
+    <state width="1877" height="285" key="GridCell.Tab.1.center" timestamp="1590233120177">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.1.left" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1590233120177" />
+    <state width="1877" height="285" key="GridCell.Tab.1.left" timestamp="1590233120177">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
-    <state width="1877" height="285" key="GridCell.Tab.1.right" timestamp="1590231721850">
+    <state width="1877" height="285" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1590233120177" />
+    <state width="1877" height="285" key="GridCell.Tab.1.right" timestamp="1590233120177">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="285" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590231721850" />
+    <state width="1877" height="285" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1590233120177" />
     <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1590229259174">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -480,10 +506,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1589965417271" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590230049841">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590236209794">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590230049841" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590236209794" />
   </component>
 </project>

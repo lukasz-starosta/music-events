@@ -1,1 +1,25 @@
-<p>landing works!</p>
+<nav class="nav">
+  <button class="button" mat-button color="accent">MUSIVA</button>
+</nav>
+<main class="main">
+<mat-card class="card card-small">
+  <mat-card-title>
+    <h1>MUSIVA</h1></mat-card-title>
+  <mat-card-subtitle><h2>Welcome to your Music Events app!</h2></mat-card-subtitle>
+  <mat-card-content>
+    <p>Explore the best music events happening around the world!</p>
+    <p>Buy tickets and reserve the best places on the venue!</p>
+    <p>Log in or Sign up to access everything</p>
+  </mat-card-content>
+</mat-card>
+<mat-card class="card">
+  <mat-tab-group>
+    <mat-tab label="Log In">
+      <app-login></app-login>
+    </mat-tab>
+    <mat-tab label="Sign Up">
+      <app-signup></app-signup>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+</main>

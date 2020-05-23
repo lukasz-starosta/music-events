@@ -1,0 +1,26 @@
+.main {
+  width: 80vw;
+  margin: 30vh auto;
+  display: flex;
+  flex-flow: row wrap;
+
+  height: 400px;
+}
+
+.card {
+  margin: 20px;
+}
+
+.card-small {
+  height: 200px;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  padding: 8px;
+}
+
+.button {
+  font-size: 2em;
+}

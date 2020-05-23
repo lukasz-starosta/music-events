@@ -1,0 +1,22 @@
+<mat-sidenav-container class="mat-sidenav-container">
+  <mat-sidenav class="mat-sidenav" mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/']">Landing</a>
+      <a mat-list-item [routerLink]="['/app/events']">Events</a>
+      <div *ngIf="authority === 'admin'">
+        <a mat-list-item [routerLink]="['/app/users']">Users</a>
+      </div>
+
+      <div *ngIf="authority === 'user'">
+        <a mat-list-item [routerLink]="['/app/profile']">Profile</a>
+      </div>
+      <!-- TODO: This should be a logout action only -->
+      <a mat-list-item [routerLink]="['/login']">Login/Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
