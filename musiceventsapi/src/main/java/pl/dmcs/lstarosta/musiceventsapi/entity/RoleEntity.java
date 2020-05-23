@@ -1,12 +1,15 @@
 package pl.dmcs.lstarosta.musiceventsapi.entity;
 
+import org.hibernate.annotations.NaturalId;
+import pl.dmcs.lstarosta.musiceventsapi.enums.RoleEnum;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "role", schema = "public", catalog = "MusicEvents")
 public class RoleEntity {
     private int id;
-    private String name;
+    private RoleEnum name;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -18,13 +21,13 @@ public class RoleEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name", nullable = false)
-    public String getName() {
+    @Enumerated(EnumType.STRING)
+    @NaturalId
+    public RoleEnum getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(RoleEnum name) {
         this.name = name;
     }
 

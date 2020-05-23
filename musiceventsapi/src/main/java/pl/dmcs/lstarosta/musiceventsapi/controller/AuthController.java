@@ -10,11 +10,14 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+import pl.dmcs.lstarosta.musiceventsapi.entity.RoleEntity;
 import pl.dmcs.lstarosta.musiceventsapi.entity.UserEntity;
+import pl.dmcs.lstarosta.musiceventsapi.enums.RoleEnum;
 import pl.dmcs.lstarosta.musiceventsapi.message.request.LoginForm;
 import pl.dmcs.lstarosta.musiceventsapi.message.request.SignUpForm;
 import pl.dmcs.lstarosta.musiceventsapi.message.response.JwtResponse;
 import pl.dmcs.lstarosta.musiceventsapi.message.response.ResponseMessage;
+import pl.dmcs.lstarosta.musiceventsapi.repository.RoleRepository;
 import pl.dmcs.lstarosta.musiceventsapi.repository.UserRepository;
 import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtProvider;
 
@@ -29,6 +32,8 @@ public class AuthController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    RoleRepository roleRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -43,7 +48,7 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String jwt = jwtProvider.generateJwtToken(authentication);
-        UserDetails userDetails = (UserDetails) ((Authentication) authentication).getPrincipal();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
         return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getUsername(), userDetails.getAuthorities()));
     }
@@ -54,7 +59,10 @@ public class AuthController {
             return new ResponseEntity<>(new ResponseMessage("Email is already taken."), HttpStatus.BAD_REQUEST);
         }
 
-        UserEntity user = new UserEntity(signUpRequest.getEmail(), passwordEncoder.encode(signUpRequest.getPassword()), signUpRequest.getFirstName(), signUpRequest.getLastName());
+        RoleEntity userRole = roleRepository.findByName(RoleEnum.user)
+                .orElseThrow(() -> new RuntimeException("Fail -> Cause: User Role not found."));
+
+        UserEntity user = new UserEntity(signUpRequest.getEmail(), passwordEncoder.encode(signUpRequest.getPassword()), signUpRequest.getFirstName(), signUpRequest.getLastName(), userRole);
 
         userRepository.save(user);
 

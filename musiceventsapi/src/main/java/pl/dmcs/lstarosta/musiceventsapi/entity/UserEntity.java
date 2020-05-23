@@ -12,16 +12,18 @@ public class UserEntity {
     private int id;
     private String firstName;
     private String email;
+    private RoleEntity role;
 
     public UserEntity() {
 
     }
 
-    public UserEntity(@NotBlank @Size(min = 3, max = 50) String email, @NotBlank @Size(min = 6, max = 100) String password, @NotBlank String firstName, @NotBlank String lastName) {
+    public UserEntity(@NotBlank @Size(min = 3, max = 50) String email, @NotBlank @Size(min = 6, max = 100) String password, @NotBlank String firstName, @NotBlank String lastName, @NotBlank RoleEntity role) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.role = role;
     }
 
     @Basic
@@ -99,5 +101,17 @@ public class UserEntity {
         result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
+    }
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    public RoleEntity getRole() {
+        return role;
+    }
+
+    public void setRole(RoleEntity role) {
+        this.role = role;
     }
 }
