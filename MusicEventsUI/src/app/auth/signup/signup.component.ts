@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ISignUp} from "../../services/ISignUp";
+import {ISignUp} from "../../types/ISignUp";
 import {AuthService} from "../../services/auth.service";
 
 @Component({

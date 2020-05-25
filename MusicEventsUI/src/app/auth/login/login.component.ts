@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ILogin} from "../../services/ILogin";
+import {ILogin} from "../../types/ILogin";
 import {AuthService} from "../../services/auth.service";
 import {TokenStorageService} from "../../services/token-storage.service";
 import {Router} from "@angular/router";

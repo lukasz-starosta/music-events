@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {ISignUp} from "./ISignUp";
-import {ILogin} from "./ILogin";
-import {IJWTResponse} from "./IJWTResponse";
+import {ISignUp} from "../types/ISignUp";
+import {ILogin} from "../types/ILogin";
+import {IJWTResponse} from "../types/IJWTResponse";
 import {TokenStorageService} from "./token-storage.service";
 
 const httpOptions = {
