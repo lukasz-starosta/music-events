@@ -11,7 +11,6 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   form: ILogin = {email: '', password: ''};
-  isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
@@ -20,9 +19,6 @@ export class LoginComponent implements OnInit {
   constructor(private  authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-    }
   }
 
   onSubmit() {
@@ -38,7 +34,6 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveAuthorities(data.authorities);
 
         this.isLoginFailed = false;
-        this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
 
         this.router.navigateByUrl('/app').catch(e => console.error(e));
@@ -49,10 +44,5 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = true;
       }
     );
-  }
-
-  logout() {
-    this.authService.logout();
-    this.isLoggedIn = false;
   }
 }

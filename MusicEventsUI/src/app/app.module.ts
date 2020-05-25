@@ -21,6 +21,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { TicketsComponent } from './tickets/tickets.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,7 @@ const routes: Routes = [
     children:
       [
         {path: 'events', component: EventsComponent},
+        {path: 'tickets', component: TicketsComponent},
         {path: 'profile', component: ProfileComponent},
         {path: 'users', component: UsersComponent},
       ]
@@ -47,6 +49,7 @@ const routes: Routes = [
     SignUpComponent,
     UsersComponent,
     LayoutComponent,
+    TicketsComponent,
   ],
   imports: [
     BrowserModule,

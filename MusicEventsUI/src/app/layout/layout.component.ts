@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TokenStorageService} from "../services/token-storage.service";
+import {AuthService} from "../services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +12,7 @@ export class LayoutComponent implements OnInit {
   private roles: string[];
   public authority: string;
 
-  constructor(private tokenStorage: TokenStorageService) {
+  constructor(private tokenStorage: TokenStorageService, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -30,4 +32,8 @@ export class LayoutComponent implements OnInit {
     }
   }
 
+  logout(): void {
+    this.authService.logout();
+    this.router.navigateByUrl('/').catch(console.error);
+  }
 }

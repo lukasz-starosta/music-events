@@ -17,7 +17,6 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
     this.signupInfo = {
       email: this.form.email,
       password: this.form.password,

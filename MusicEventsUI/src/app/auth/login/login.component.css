@@ -9,15 +9,3 @@
   margin-top: 12px;
 }
 
-.already-logged-in {
-  padding: 30px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.already-logged-in-button {
-  margin: 8px;
-}
