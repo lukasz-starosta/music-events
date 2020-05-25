@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {TokenStorageService} from "../services/token-storage.service";
 import {AuthService} from "../services/auth.service";
 
 @Component({
@@ -10,10 +9,10 @@ import {AuthService} from "../services/auth.service";
 export class LandingComponent implements OnInit {
   isLoggedIn = false;
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
+    if (this.authService.isLoggedIn()) {
       this.isLoggedIn = true;
     }
   }
