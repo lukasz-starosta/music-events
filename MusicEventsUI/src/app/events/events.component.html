@@ -16,8 +16,8 @@
 
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions</th>
-    <td mat-cell class="actions" *matCellDef="let row">
-      <button mat-raised-button color="accent" *ngIf="authority === 'user'">Book</button>
+    <td mat-cell class="actions" *matCellDef="let event">
+      <button mat-raised-button color="accent" *ngIf="authority === 'user'" [routerLink]="[event.id, 'book-ticket']">Book</button>
       <button mat-raised-button color="accent" *ngIf="authority === 'admin'">Edit</button>
       <button mat-raised-button color="warn" *ngIf="authority === 'admin'">Cancel</button>
     </td>
