@@ -1,1 +1,16 @@
-<p>book-ticket works! for eventId {{eventId}}</p>
+<mat-card>
+  <mat-card-title>Choose your seats</mat-card-title>
+  <mat-card-content>
+    <mat-grid-list style="width: {{colsCount * 60}}px" cols="{{colsCount}}" gutterSize="8px" rowHeight="34px">
+      <mat-grid-tile
+        *ngFor="let ticket of tickets">
+        <div class="seat" [ngClass]="ticket.isTaken ? 'seat-taken' : isTicketSelected(ticket) ? 'seat-selected' : 'seat-free'" (click)="handleTicketClick(ticket)"></div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <span>{{selectedTickets.length}} seats chosen</span>
+    <button mat-raised-button color="warn" routerLink="../..">Cancel</button>
+    <button mat-raised-button color="accent" [disabled]="selectedTickets.length === 0" (click)="book()">Book</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,50 @@
+.seat-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seat {
+  height: 30px;
+  width: 50px;
+  border-radius: 4px;
+  box-shadow: 0 8px 0 -12px rgba(0, 0, 0, 0.2);
+}
+
+.seat-taken {
+  background: orangered;
+  cursor: not-allowed;
+}
+
+.seat-selected {
+  background: limegreen;
+  border: 2px solid rgba(0,0,0,0.8);
+  cursor: pointer;
+}
+
+.seat-free {
+  background: limegreen;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.seat-free:hover {
+  transform: scale(1.05);
+}
+
+mat-card-content {
+  padding: 20px 8px;
+  margin: 0;
+}
+
+mat-grid-list {
+  margin: 0 auto;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+mat-card-actions > span {
+  margin-right: auto;
+}

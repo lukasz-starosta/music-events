@@ -24,6 +24,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {TicketsComponent} from './tickets/tickets.component';
 import {MatTableModule} from "@angular/material/table";
 import {BookTicketComponent} from './book-ticket/book-ticket.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 const routes: Routes = [
   {
@@ -68,7 +70,9 @@ const routes: Routes = [
     MatTabsModule,
     MatInputModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
