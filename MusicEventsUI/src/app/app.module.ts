@@ -26,6 +26,7 @@ import {MatTableModule} from "@angular/material/table";
 import {BookTicketComponent} from './book-ticket/book-ticket.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { AppLandingComponent } from './app-landing/app-landing.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     path: 'app', component: LayoutComponent,
     children:
       [
+        {path: '', component: AppLandingComponent},
         {path: 'events', component: EventsComponent},
         {path: 'events/:id/book-ticket', component: BookTicketComponent},
         {path: 'tickets', component: TicketsComponent},
@@ -56,6 +58,7 @@ const routes: Routes = [
     LayoutComponent,
     TicketsComponent,
     BookTicketComponent,
+    AppLandingComponent,
   ],
   imports: [
     BrowserModule,

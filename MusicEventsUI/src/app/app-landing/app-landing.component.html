@@ -1,0 +1,28 @@
+<mat-card class="title-card">
+  <mat-card-title>Hello, user</mat-card-title>
+  <mat-card-content class="title-card-text">
+    <h3>See all of your upcoming events below or go to Events to book more!</h3>
+  </mat-card-content>
+</mat-card>
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table">
+  <ng-container matColumnDef="eventId">
+    <th mat-header-cell *matHeaderCellDef>Event Id</th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.eventId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="row">
+    <th mat-header-cell *matHeaderCellDef>Row</th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.row}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="column">
+    <th mat-header-cell *matHeaderCellDef>Column</th>
+    <td mat-cell *matCellDef="let ticket"> {{ticket.column}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
