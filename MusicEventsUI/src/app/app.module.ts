@@ -27,6 +27,8 @@ import {BookTicketComponent} from './book-ticket/book-ticket.component';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { AppLandingComponent } from './app-landing/app-landing.component';
+import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 const routes: Routes = [
   {
@@ -59,6 +61,7 @@ const routes: Routes = [
     TicketsComponent,
     BookTicketComponent,
     AppLandingComponent,
+    PaymentDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ const routes: Routes = [
     MatButtonModule,
     MatTableModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

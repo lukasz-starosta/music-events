@@ -15,6 +15,6 @@
   <mat-card-actions>
     <span>{{selectedTickets.length}} seats chosen</span>
     <button mat-raised-button color="warn" routerLink="../..">Cancel</button>
-    <button mat-raised-button color="accent" [disabled]="selectedTickets.length === 0" (click)="book()">Book</button>
+    <button mat-raised-button color="primary" [disabled]="selectedTickets.length === 0" (click)="book()">Book</button>
   </mat-card-actions>
 </mat-card>

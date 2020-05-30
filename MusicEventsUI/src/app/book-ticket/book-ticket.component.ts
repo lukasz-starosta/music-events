@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {TicketsMock} from "../mocks/TicketsMock";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {ITicket} from "../types/ITicket";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatDialog} from "@angular/material/dialog";
+import {PaymentDialogComponent} from "../payment-dialog/payment-dialog.component";
 
 @Component({
   selector: 'app-book-ticket',
@@ -15,7 +16,7 @@ export class BookTicketComponent implements OnInit {
   colsCount: number;
   eventId: string;
 
-  constructor(private route: ActivatedRoute, private snackBar: MatSnackBar, private router: Router) {
+  constructor(private route: ActivatedRoute, private dialog: MatDialog) {
     this.colsCount = Math.max(...this.tickets.map(t => t.column));
   }
 
@@ -42,8 +43,6 @@ export class BookTicketComponent implements OnInit {
   }
 
   book(): void {
-    // TODO: send a book request here, show notification if failed / success
-    this.snackBar.open(`You booked ${this.selectedTickets.length} tickets! 🎫`, null, {horizontalPosition: 'right', duration: 3000});
-    this.router.navigateByUrl('/app').catch(console.error)
+    this.dialog.open(PaymentDialogComponent, {data: {selectedTickets: this.selectedTickets}});
   }
 }

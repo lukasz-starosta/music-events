@@ -1,24 +1,24 @@
 <form name="form" class="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
     <input matInput type="text" placeholder="ex. 217862@edu.p.lodz.pl" name="email" [(ngModel)]="form.email"
            #email="ngModel"
            required/>
     <mat-error *ngIf="f.submitted && email.invalid && email.errors.required">Email is required</mat-error>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>First name</mat-label>
     <input matInput type="text" class="form-control" name="firstName" [(ngModel)]="form.firstName" #firstName="ngModel"
            required/>
     <mat-error *ngIf="f.submitted && firstName.invalid && firstName.errors.required">First name is required</mat-error>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Last name</mat-label>
     <input matInput type="text" class="form-control" name="lastName" [(ngModel)]="form.lastName" #lastName="ngModel"
            required/>
     <mat-error *ngIf="f.submitted && lastName.invalid && lastName.errors.required">Last name is required</mat-error>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Password</mat-label>
     <input matInput type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"
            required minlength="6"/>

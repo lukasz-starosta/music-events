@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +277,7 @@
       <workItem from="1589984753935" duration="22449000" />
       <workItem from="1590567045773" duration="6724000" />
       <workItem from="1590697646688" duration="3042000" />
-      <workItem from="1590758163144" duration="7888000" />
+      <workItem from="1590758163144" duration="10793000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -391,7 +398,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590825861915</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added a simple edit form for profile">
+      <created>1590829804798</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1590829804798</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +438,8 @@
     <MESSAGE value="Tickets can be chosen - frontend" />
     <MESSAGE value="Added a welcome page to the app" />
     <MESSAGE value="Added a tickets page, done some styling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a tickets page, done some styling" />
+    <MESSAGE value="Added a simple edit form for profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a simple edit form for profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -463,11 +478,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="362" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590228978961" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590825860410">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590829803590">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707456249" />
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590825860410" />
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590829803590" />
     <state x="739" y="279" key="FileChooserDialogImpl" timestamp="1590229020220">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -537,11 +552,11 @@
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700971276" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1589615382536" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1590823403957">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1590829806662">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707461872" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590823403957" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590829806662" />
     <state x="776" y="303" key="chooseDestDirectoryDialog" timestamp="1589616128618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -550,11 +565,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="330" key="com.intellij.database.dbimport.ImportUtil.MyDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589615980021" />
-    <state x="656" y="257" width="619" height="536" key="find.popup" timestamp="1590398500636">
+    <state x="656" y="257" width="619" height="536" key="find.popup" timestamp="1590846826210">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="656" y="257" width="619" height="536" key="find.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707058889" />
-    <state x="656" y="257" width="619" height="536" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590398500636" />
+    <state x="656" y="257" width="619" height="536" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590846826210" />
     <state x="343" y="145" width="1235" height="564" key="new project wizard" timestamp="1589357307134">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -563,10 +578,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590700049965" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590829605056">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590847068771">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590829605056" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590847068771" />
   </component>
 </project>
