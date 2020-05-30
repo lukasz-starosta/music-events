@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/types/TEventTicket.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/events/events.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/profile/profile.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/tickets/tickets.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +277,7 @@
       <workItem from="1589984753935" duration="22449000" />
       <workItem from="1590567045773" duration="6724000" />
       <workItem from="1590697646688" duration="3042000" />
-      <workItem from="1590758163144" duration="4821000" />
+      <workItem from="1590758163144" duration="6677000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -378,7 +384,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590786427436</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added a welcome page to the app">
+      <created>1590823399591</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1590823399591</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,7 +422,8 @@
     <MESSAGE value="Added an Events table with mock data" />
     <MESSAGE value="Added routing from events to book-ticket" />
     <MESSAGE value="Tickets can be chosen - frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tickets can be chosen - frontend" />
+    <MESSAGE value="Added a welcome page to the app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a welcome page to the app" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -424,6 +438,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="536" y="236" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1589616217225" />
+    <state x="713" y="328" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590825230025">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="713" y="328" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1590825230025" />
     <state x="689" y="300" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1589616221209">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -444,11 +462,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="362" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590228978961" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590786425122">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1590825860410">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707456249" />
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590786425122" />
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1590825860410" />
     <state x="739" y="279" key="FileChooserDialogImpl" timestamp="1590229020220">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -518,11 +536,11 @@
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700971276" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1589615382536" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1590786429571">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1590823403957">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707461872" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590786429571" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1590823403957" />
     <state x="776" y="303" key="chooseDestDirectoryDialog" timestamp="1589616128618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -544,10 +562,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590700049965" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590398598583">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1590825666668">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590398598583" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1590825666668" />
   </component>
 </project>

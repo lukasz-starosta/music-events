@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+mat-card {
+  margin-bottom: 16px;
+}
+
 .actions {
   width: 170px;
   display: flex;

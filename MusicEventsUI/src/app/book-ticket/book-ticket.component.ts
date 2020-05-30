@@ -43,7 +43,7 @@ export class BookTicketComponent implements OnInit {
 
   book(): void {
     // TODO: send a book request here, show notification if failed / success
-    this.snackBar.open(`You booked ${this.selectedTickets.length} tickets! 🎫`, null, {duration: 3000});
+    this.snackBar.open(`You booked ${this.selectedTickets.length} tickets! 🎫`, null, {horizontalPosition: 'right', duration: 3000});
     this.router.navigateByUrl('/app').catch(console.error)
   }
 }
