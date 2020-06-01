@@ -22,6 +22,7 @@ import pl.dmcs.lstarosta.musiceventsapi.repository.UserRepository;
 import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtProvider;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)

@@ -19,7 +19,6 @@ export class AuthService {
   private authUrl = 'http://localhost:8080/restApi/auth'
   private signUpUrl = this.authUrl + '/signup';
   private loginUrl = this.authUrl + '/login';
-  private logoutUrl = this.authUrl + '/logout';
 
   constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) {
   }
