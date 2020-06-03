@@ -4,6 +4,8 @@ import {ActivatedRoute} from "@angular/router";
 import {ITicket} from "../types/ITicket";
 import {MatDialog} from "@angular/material/dialog";
 import {PaymentDialogComponent} from "../payment-dialog/payment-dialog.component";
+import {IEvent} from "../types/IEvent";
+import {EventsService} from "../services/events.service";
 
 @Component({
   selector: 'app-book-ticket',
@@ -14,14 +16,16 @@ export class BookTicketComponent implements OnInit {
   tickets: ITicket[] = TicketsMock;
   selectedTickets: ITicket[] = [];
   colsCount: number;
-  eventId: string;
+  event: IEvent;
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, private dialog: MatDialog, private eventsService: EventsService) {
     this.colsCount = Math.max(...this.tickets.map(t => t.column));
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.eventId = params.id);
+    this.route.params.subscribe(params => {
+      this.eventsService.getEvent(params.id).subscribe(event => this.event = event);
+    });
   }
 
   handleTicketClick(ticket: ITicket): void {

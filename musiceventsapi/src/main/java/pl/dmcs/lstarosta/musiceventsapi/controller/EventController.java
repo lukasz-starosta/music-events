@@ -1,14 +1,14 @@
 package pl.dmcs.lstarosta.musiceventsapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import pl.dmcs.lstarosta.musiceventsapi.entity.EventEntity;
 import pl.dmcs.lstarosta.musiceventsapi.repository.EventRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -19,7 +19,14 @@ public class EventController {
     EventRepository eventRepository;
 
     @GetMapping()
-    public List<EventEntity> getEvents() {
-        return eventRepository.findAll();
+    public ResponseEntity<List<EventEntity>> getEvents() {
+        return new ResponseEntity<List<EventEntity>>(eventRepository.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EventEntity> getEvent(@PathVariable Long id) {
+        Optional<EventEntity> event = eventRepository.findById(id);
+        if (!event.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<EventEntity>(event.get(), HttpStatus.OK);
     }
 }
