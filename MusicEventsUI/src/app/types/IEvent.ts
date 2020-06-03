@@ -1,7 +1,10 @@
 export interface IEvent {
   id: number;
-  title: string;
-  description: string;
+  name: string;
   city: string;
+  address: string;
+  musicType: string;
   date: string;
+
+  description: string;
 }

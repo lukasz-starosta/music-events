@@ -3,14 +3,24 @@
 </mat-card>
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" multiTemplateDataRows>
-  <ng-container matColumnDef="title">
-    <th mat-header-cell *matHeaderCellDef>Title</th>
-    <td mat-cell *matCellDef="let event"> {{event.title}} </td>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let event"> {{event.name}} </td>
   </ng-container>
 
   <ng-container matColumnDef="city">
     <th mat-header-cell *matHeaderCellDef>City</th>
     <td mat-cell *matCellDef="let event"> {{event.city}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th mat-header-cell *matHeaderCellDef>Address</th>
+    <td mat-cell *matCellDef="let event"> {{event.address}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="musicType">
+    <th mat-header-cell *matHeaderCellDef>Music type</th>
+    <td mat-cell *matCellDef="let event"> {{event.musicType}} </td>
   </ng-container>
 
   <ng-container matColumnDef="date">

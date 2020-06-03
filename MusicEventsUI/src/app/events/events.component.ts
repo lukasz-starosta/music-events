@@ -3,7 +3,7 @@ import {Authority} from "../types/Authority";
 import {AuthService} from "../services/auth.service";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {IEvent} from "../types/IEvent";
-import {EventsMock} from "../mocks/EventsMock";
+import {EventsService} from "../services/events.service";
 
 @Component({
   selector: 'app-events',
@@ -18,16 +18,17 @@ import {EventsMock} from "../mocks/EventsMock";
   ],
 })
 export class EventsComponent implements OnInit {
-  displayedColumns: string[] = ['title', 'city', 'date', 'actions'];
-  dataSource = EventsMock;
+  displayedColumns: string[] = ['name', 'city', 'address', 'date', 'musicType', 'actions'];
+  dataSource: IEvent[];
   authority: Authority;
   expandedElement: IEvent | null;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private eventsService: EventsService) {
   }
 
   ngOnInit(): void {
     this.authority = this.authService.getAuthority();
+    this.eventsService.getEvents().subscribe(events => this.dataSource = events);
   }
 
 }

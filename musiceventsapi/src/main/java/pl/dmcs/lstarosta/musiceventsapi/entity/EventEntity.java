@@ -8,7 +8,11 @@ import java.sql.Date;
 public class EventEntity {
     private int id;
     private String name;
+    private String city;
     private Date date;
+
+    public EventEntity() {
+    }
 
     @Id
     @Column(name = "id", nullable = false)
@@ -60,5 +64,51 @@ public class EventEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "city", nullable = false)
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    private String musicType;
+
+    @Basic
+    @Column(name = "musicType")
+    public String getMusicType() {
+        return musicType;
+    }
+
+    public void setMusicType(String musicType) {
+        this.musicType = musicType;
+    }
+
+    private String address;
+
+    @Basic
+    @Column(name = "address")
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    private String description;
+
+    @Basic
+    @Column(name = "description")
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
