@@ -3,6 +3,8 @@ import {IUser} from "../types/IUser";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {TokenStorageService} from "./token-storage.service";
+import {IPatchUser} from "../types/IPatchUser";
+import {apiUrl} from "../constants";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,7 @@ export class UserService {
   }
 
   fetchUser(email: string): Observable<IUser> {
-    return this.http.get<IUser>(`http://localhost:8080/restApi/user/${email}`);
+    return this.http.get<IUser>(`${apiUrl}/user/${email}`);
   }
 
   getUser(): Observable<IUser> {
@@ -31,5 +33,15 @@ export class UserService {
         }
       }
     )
+  }
+
+  patchUser(patchUserForm: IPatchUser): Observable<IUser> {
+    return new Observable<IUser>(observer => {
+      this.http.patch<IUser>(`${apiUrl}/user/${this.user.email}`, patchUserForm).subscribe(user => {
+        this.user = user;
+        observer.next(this.user);
+        return observer.complete();
+      })
+    })
   }
 }

@@ -6,6 +6,7 @@ import {ILogin} from "../types/ILogin";
 import {IJWTResponse} from "../types/IJWTResponse";
 import {TokenStorageService} from "./token-storage.service";
 import {Authority} from "../types/Authority";
+import {apiUrl} from "../constants";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,7 +17,7 @@ const httpOptions = {
 })
 export class AuthService {
 
-  private authUrl = 'http://localhost:8080/restApi/auth'
+  private authUrl = `${apiUrl}/auth`
   private signUpUrl = this.authUrl + '/signup';
   private loginUrl = this.authUrl + '/login';
 

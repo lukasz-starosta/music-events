@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ISignUp} from "../types/ISignUp";
 import {UserService} from "../services/user.service";
 import {IUser} from "../types/IUser";
+import {IPatchUser} from "../types/IPatchUser";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-profile',
@@ -9,28 +11,29 @@ import {IUser} from "../types/IUser";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  form: ISignUp = {email: '', password: '', firstName: '', lastName: ''};
-  signupInfo: ISignUp;
+  form: IPatchUser = {email: '', password: '', firstName: '', lastName: ''};
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private snackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe(user => {
-      this.form.email = user.email;
-      this.form.firstName = user.firstName;
-      this.form.lastName = user.lastName;
-    })
+    this.userService.getUser().subscribe(user => this.saveUserData(user))
   }
 
   onSubmit() {
-    this.signupInfo = {
-      email: this.form.email,
-      password: this.form.password,
-      firstName: this.form.firstName,
-      lastName: this.form.lastName
-    }
+    this.userService.patchUser(this.form).subscribe(user => {
+        this.saveUserData(user)
+        this.snackBar.open("Saved user data 🤸‍♂️", null, {horizontalPosition: 'right'})
+      }
+    );
+  }
 
-    console.log(this.signupInfo);
+  saveUserData(user
+                 :
+                 IUser
+  ) {
+    this.form.email = user.email;
+    this.form.firstName = user.firstName;
+    this.form.lastName = user.lastName;
   }
 }

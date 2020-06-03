@@ -57,8 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable().
                 authorizeRequests()
                 .antMatchers("/restApi/auth/**").permitAll()
-                .antMatchers("/restApi/user/**").permitAll()
-                .antMatchers("/restApi/profile").hasRole(RoleEnum.user.name())
+                .antMatchers("/restApi/user/**").hasAnyAuthority(RoleEnum.user.name(), RoleEnum.admin.name())
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
