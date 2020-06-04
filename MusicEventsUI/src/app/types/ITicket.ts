@@ -1,7 +1,9 @@
+import {IEvent} from "./IEvent";
+import {IUser} from "./IUser";
+
 export interface ITicket {
-  eventId: number;
+  event: IEvent;
   row: number;
-  column: number;
-  isTaken: boolean;
-  takenBy?: number;
+  col: number;
+  user?: IUser;
 }

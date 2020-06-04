@@ -6,8 +6,7 @@ import javax.persistence.*;
 @Table(name = "ticket", schema = "public", catalog = "MusicEvents")
 public class TicketEntity {
     private int id;
-    private int price;
-    private boolean isBooked;
+    private float price;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -21,23 +20,15 @@ public class TicketEntity {
 
     @Basic
     @Column(name = "price", nullable = false)
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "is_booked", nullable = false)
-    public boolean isBooked() {
-        return isBooked;
-    }
 
-    public void setBooked(boolean booked) {
-        isBooked = booked;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -48,7 +39,6 @@ public class TicketEntity {
 
         if (id != that.id) return false;
         if (price != that.price) return false;
-        if (isBooked != that.isBooked) return false;
 
         return true;
     }
@@ -56,8 +46,53 @@ public class TicketEntity {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + price;
-        result = 31 * result + (isBooked ? 1 : 0);
+        result = 31 * result + (int)price;
         return result;
+    }
+
+    private int row;
+
+    @Basic
+    @Column(name = "row")
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    private int col;
+
+    @Basic
+    @Column(name = "col")
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
+
+    private UserEntity user;
+
+    @OneToOne
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
+
+    private EventEntity event;
+
+    @OneToOne
+    public EventEntity getEvent() {
+        return event;
+    }
+
+    public void setEvent(EventEntity event) {
+        this.event = event;
     }
 }

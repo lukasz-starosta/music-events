@@ -6,5 +6,8 @@ export interface IEvent {
   musicType: string;
   date: string;
 
+  rows: number;
+  columns: number;
+
   description: string;
 }

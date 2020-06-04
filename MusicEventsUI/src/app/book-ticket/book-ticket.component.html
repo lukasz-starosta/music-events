@@ -5,10 +5,10 @@
 <mat-card>
   <mat-card-title>Choose your seats</mat-card-title>
   <mat-card-content>
-    <mat-grid-list style="width: {{colsCount * 60}}px" cols="{{colsCount}}" gutterSize="8px" rowHeight="34px">
+    <mat-grid-list style="width: {{event ? event.columns * 60 : 0}}px" cols="{{event && event.columns}}" gutterSize="8px" rowHeight="34px">
       <mat-grid-tile
         *ngFor="let ticket of tickets">
-        <div class="seat" [ngClass]="ticket.isTaken ? 'seat-taken' : isTicketSelected(ticket) ? 'seat-selected' : 'seat-free'" (click)="handleTicketClick(ticket)"></div>
+        <div class="seat" [ngClass]="isTicketTaken(ticket) ? 'seat-taken' : isTicketSelected(ticket) ? 'seat-selected' : 'seat-free'" (click)="handleTicketClick(ticket)"></div>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-card-content>

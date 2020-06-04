@@ -1,0 +1,22 @@
+package pl.dmcs.lstarosta.musiceventsapi.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import pl.dmcs.lstarosta.musiceventsapi.entity.TicketEntity;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface TicketRepository extends JpaRepository<TicketEntity, Long>, TicketRepositoryCustom {
+}
+
+@Repository
+interface TicketRepositoryCustom {
+    @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId")
+    Optional<List<TicketEntity>> findByEventId(@Param("eventId") Integer eventId);
+
+    Optional<List<TicketEntity>> findByUserId(Integer eventId);
+}
