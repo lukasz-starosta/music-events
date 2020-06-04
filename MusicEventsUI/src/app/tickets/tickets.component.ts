@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ITicket} from "../types/ITicket";
-import {TicketsMock} from "../mocks/TicketsMock";
+import {UserService} from "../services/user.service";
+import {TicketsService} from "../services/tickets.service";
+import {IUser} from "../types/IUser";
 
 @Component({
   selector: 'app-tickets',
@@ -8,16 +10,19 @@ import {TicketsMock} from "../mocks/TicketsMock";
   styleUrls: ['./tickets.component.css']
 })
 export class TicketsComponent implements OnInit {
-
-  // TODO: should be a ticket-event connection
-  dataSource: ITicket[] = TicketsMock;
+  dataSource: ITicket[] = [];
 
   // TODO: should include proper ticket-event fields
-  displayedColumns = ['eventId', 'row', 'column'];
+  displayedColumns = ['row', 'col'];
 
-  constructor() { }
+  constructor(private userService: UserService, private ticketsService: TicketsService) { }
 
   ngOnInit(): void {
+    this.userService.getUser().subscribe((user: IUser) => {
+      this.ticketsService.getTicketsForUser(user.id.toString()).subscribe(tickets => {
+        this.dataSource = tickets || [];
+      })
+    })
   }
 
 }

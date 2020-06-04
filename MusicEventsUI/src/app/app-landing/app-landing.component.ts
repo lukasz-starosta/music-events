@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ITicket} from "../types/ITicket";
-import {TicketsMock} from "../mocks/TicketsMock";
 import {UserService} from "../services/user.service";
 import {IUser} from "../types/IUser";
+import {TicketsService} from "../services/tickets.service";
 
 @Component({
   selector: 'app-app-landing',
@@ -11,17 +11,21 @@ import {IUser} from "../types/IUser";
 })
 export class AppLandingComponent implements OnInit {
   public firstName: string;
-  // TODO: should be a ticket-event connection
-  dataSource: ITicket[] = TicketsMock.slice(0, 5);
+  dataSource: ITicket[] = [];
 
   // TODO: should include proper ticket-event fields
-  displayedColumns = ['eventId', 'row', 'column'];
+  displayedColumns = ['row', 'col'];
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private ticketsService: TicketsService) {
   }
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe((user: IUser) => this.firstName = user.firstName)
+    this.userService.getUser().subscribe((user: IUser) => {
+      this.firstName = user.firstName;
+      this.ticketsService.getTicketsForUser(user.id.toString()).subscribe(tickets => {
+        this.dataSource = tickets || [];
+      })
+    })
   }
 
 }

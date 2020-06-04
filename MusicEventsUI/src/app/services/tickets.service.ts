@@ -13,4 +13,8 @@ export class TicketsService {
   getTicketsForEvent(eventId: string): Observable<ITicket[]> {
     return this.http.get<ITicket[]>(`${apiUrl}/tickets?eventId=${eventId}`);
   }
+
+  getTicketsForUser(userId: string): Observable<ITicket[]> {
+    return this.http.get<ITicket[]>(`${apiUrl}/tickets?userId=${userId}`);
+  }
 }
