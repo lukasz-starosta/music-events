@@ -2,6 +2,9 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {HttpClient} from "@angular/common/http";
+import {apiUrl} from "../constants";
+import {ITicket} from "../types/ITicket";
 
 @Component({
   selector: 'app-payment-dialog',
@@ -10,7 +13,7 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 })
 export class PaymentDialogComponent implements OnInit {
 
-  constructor(private snackBar: MatSnackBar, private router: Router, public dialogRef: MatDialogRef<PaymentDialogComponent>,
+  constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router, public dialogRef: MatDialogRef<PaymentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
 
@@ -22,8 +25,11 @@ export class PaymentDialogComponent implements OnInit {
   }
 
   confirm(): void {
-    // TODO: send a book request here, show notification if failed / success
-    this.snackBar.open(`You booked ${this.data.selectedTickets.length} tickets! 🎫`, null, {horizontalPosition: 'right', duration: 3000});
+    this.http.post<ITicket>(`${apiUrl}/tickets/book`, this.data.selectedTickets).subscribe()
+    this.snackBar.open(`You booked ${this.data.selectedTickets.length} tickets! 🎫`, null, {
+      horizontalPosition: 'right',
+      duration: 3000
+    });
     this.dialogRef.close();
     this.router.navigateByUrl('/app').catch(console.error)
   }

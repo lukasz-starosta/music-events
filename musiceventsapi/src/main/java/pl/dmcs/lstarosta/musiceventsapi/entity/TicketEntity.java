@@ -8,7 +8,18 @@ public class TicketEntity {
     private int id;
     private float price;
 
+    public TicketEntity(EventEntity event, UserEntity user, int col, int row, int price) {
+        this.event = event;
+        this.user = user;
+        this.col = col;
+        this.row = row;
+        this.price = price;
+    }
+
+    public TicketEntity() {}
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;

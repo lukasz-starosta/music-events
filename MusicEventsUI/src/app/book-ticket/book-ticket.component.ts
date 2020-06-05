@@ -6,6 +6,7 @@ import {PaymentDialogComponent} from "../payment-dialog/payment-dialog.component
 import {IEvent} from "../types/IEvent";
 import {EventsService} from "../services/events.service";
 import {TicketsService} from "../services/tickets.service";
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'app-book-ticket',
@@ -18,18 +19,20 @@ export class BookTicketComponent implements OnInit {
   selectedTickets: ITicket[] = [];
   event: IEvent;
 
-  constructor(private route: ActivatedRoute, private dialog: MatDialog, private eventsService: EventsService, private ticketsService: TicketsService) {
+  constructor(private route: ActivatedRoute, private dialog: MatDialog, private eventsService: EventsService, private ticketsService: TicketsService, private userService: UserService) {
   }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.eventsService.getEvent(params.id).subscribe(event => {
         this.event = event;
-        for (let row = 0; row < this.event.rows; row++) {
-          for (let col = 0; col < this.event.columns; col++) {
-            this.tickets.push({row, col, event: this.event})
+        this.userService.getUser().subscribe(user => {
+          for (let row = 0; row < this.event.rows; row++) {
+            for (let col = 0; col < this.event.columns; col++) {
+              this.tickets.push({row, col, event: this.event, user})
+            }
           }
-        }
+        })
       });
 
       this.ticketsService.getTicketsForEvent(params.id).subscribe(tickets => this.takenTickets = tickets || [])

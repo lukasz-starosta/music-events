@@ -1,11 +1,16 @@
 package pl.dmcs.lstarosta.musiceventsapi.controller;
 
+import com.sun.security.auth.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import pl.dmcs.lstarosta.musiceventsapi.entity.TicketEntity;
+import pl.dmcs.lstarosta.musiceventsapi.message.request.BookTicket;
 import pl.dmcs.lstarosta.musiceventsapi.repository.TicketRepository;
+import pl.dmcs.lstarosta.musiceventsapi.security.services.UserPrinciple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,5 +38,27 @@ public class TicketController {
             return new ResponseEntity<>(new ArrayList<>(), HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<List<TicketEntity>>(tickets.get(), HttpStatus.OK);
+    }
+
+    @PostMapping("/book")
+    public ResponseEntity<TicketEntity> bookTicket(@RequestBody List<BookTicket> bookTickets) {
+        if (bookTickets.size() == 0) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        for (BookTicket ticket : bookTickets) {
+            if (!userDetails.getUsername().equals(ticket.getUser().getEmail())) {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+
+            Optional<TicketEntity> existingTicket = ticketRepository.isBooked(ticket.getEvent().getId(), ticket.getRow(), ticket.getCol());
+            if (!existingTicket.isPresent()) {
+                TicketEntity newTicket = new TicketEntity(ticket.getEvent(), ticket.getUser(), ticket.getCol(), ticket.getRow(), ticket.getEvent().getTicketPrice());
+                ticketRepository.save(newTicket);
+            } else {
+                return new ResponseEntity<>(HttpStatus.CONFLICT);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

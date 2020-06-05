@@ -20,4 +20,7 @@ interface TicketRepositoryCustom {
 
     @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId")
     Optional<List<TicketEntity>> findByUserId(@Param("userId") Integer userId);
+
+    @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId AND t.row = :row AND t.col = :col")
+    Optional<TicketEntity> isBooked(@Param("eventId") Integer eventId, @Param("row") Integer row, @Param("col") Integer col);
 }

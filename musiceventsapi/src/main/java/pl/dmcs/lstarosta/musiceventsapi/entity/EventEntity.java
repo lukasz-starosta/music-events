@@ -15,6 +15,7 @@ public class EventEntity {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     public int getId() {
         return id;
@@ -137,4 +138,15 @@ public class EventEntity {
     }
 
 
+    private int ticketPrice;
+
+    @Basic
+    @Column(name="ticketPrice")
+    public int getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void setTicketPrice(int ticketPrice) {
+        this.ticketPrice = ticketPrice;
+    }
 }
