@@ -5,5 +5,6 @@ export interface ITicket {
   event: IEvent;
   row: number;
   col: number;
-  user?: IUser;
+  user: IUser;
+  price?: number;
 }

@@ -13,8 +13,7 @@ export class AppLandingComponent implements OnInit {
   public firstName: string;
   dataSource: ITicket[] = [];
 
-  // TODO: should include proper ticket-event fields
-  displayedColumns = ['row', 'col'];
+  displayedColumns = ['event.name', 'event.date', 'row', 'col', 'price'];
 
   constructor(private userService: UserService, private ticketsService: TicketsService) {
   }

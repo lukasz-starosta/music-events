@@ -12,8 +12,7 @@ import {IUser} from "../types/IUser";
 export class TicketsComponent implements OnInit {
   dataSource: ITicket[] = [];
 
-  // TODO: should include proper ticket-event fields
-  displayedColumns = ['row', 'col'];
+  displayedColumns = ['event.name', 'event.date', 'row', 'col', 'price'];
 
   constructor(private userService: UserService, private ticketsService: TicketsService) { }
 
