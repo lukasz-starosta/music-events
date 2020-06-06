@@ -21,7 +21,7 @@ export class AppLandingComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUser().subscribe((user: IUser) => {
       this.firstName = user.firstName;
-      this.ticketsService.getTicketsForUser(user.id.toString()).subscribe(tickets => {
+      this.ticketsService.getUpcomingTicketsForUser(user.id.toString()).subscribe(tickets => {
         this.dataSource = tickets || [];
       })
     })

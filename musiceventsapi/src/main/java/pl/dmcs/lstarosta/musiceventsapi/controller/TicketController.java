@@ -46,6 +46,21 @@ public class TicketController {
         return new ResponseEntity<List<TicketEntity>>(tickets.get(), HttpStatus.OK);
     }
 
+    @GetMapping("/upcoming")
+    public ResponseEntity<List<TicketEntity>> getTickets(@RequestParam(required = false) Optional<Integer> userId) {
+
+        Optional<List<TicketEntity>> tickets = Optional.of(new ArrayList<TicketEntity>());
+
+       if (userId.isPresent()) {
+            tickets = ticketRepository.findUpcomingTicketsForUser(userId.get());
+        }
+
+        if (!tickets.isPresent()) {
+            return new ResponseEntity<>(new ArrayList<>(), HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<List<TicketEntity>>(tickets.get(), HttpStatus.OK);
+    }
+
     @PostMapping("/book")
     @Transactional
     public ResponseEntity<TicketEntity> bookTicket(@RequestBody BookTicketRequest bookTicketRequest) {
