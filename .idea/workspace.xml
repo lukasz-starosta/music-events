@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/app-landing/app-landing.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/services/tickets.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/services/tickets.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/repository/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/repository/TicketRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/layout/layout.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +273,7 @@
       <workItem from="1590567045773" duration="6724000" />
       <workItem from="1590697646688" duration="3042000" />
       <workItem from="1590758163144" duration="15128000" />
-      <workItem from="1590931369829" duration="38380000" />
+      <workItem from="1590931369829" duration="40129000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -480,7 +478,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591447902370</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="User can fetch upcoming events only">
+      <created>1591449038304</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1591449038304</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Added prices to tickets and book-ticket">
+      <created>1591449870847</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1591449870847</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,8 +520,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/MusicEventsUI" />
     </ignored-roots>
-    <MESSAGE value="Added basic auth functionality" />
-    <MESSAGE value="Added JWT" />
     <MESSAGE value="Added missing files to VCS, added a possibility to logout" />
     <MESSAGE value="Added working Roles" />
     <MESSAGE value="Added some better auth on client" />
@@ -533,7 +543,9 @@
     <MESSAGE value="Correct fields in tickets tables" />
     <MESSAGE value="Created a payment entity" />
     <MESSAGE value="Pattern matching on the backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pattern matching on the backend" />
+    <MESSAGE value="User can fetch upcoming events only" />
+    <MESSAGE value="Added prices to tickets and book-ticket" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added prices to tickets and book-ticket" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -588,11 +600,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="362" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590228978961" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1591447900469">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1591449867562">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707456249" />
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591447900469" />
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591449867562" />
     <state width="431" height="466" key="DebuggerActiveHint" timestamp="1591445544092">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -692,10 +704,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591211957552" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1591448328877">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1591450401218">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591448328877" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591450401218" />
   </component>
 </project>
