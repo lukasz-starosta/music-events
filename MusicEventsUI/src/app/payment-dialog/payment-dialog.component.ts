@@ -12,6 +12,11 @@ import {ITicket} from "../types/ITicket";
   styleUrls: ['./payment-dialog.component.css']
 })
 export class PaymentDialogComponent implements OnInit {
+  form = {
+    cardNumber: '',
+    expirationDate: '',
+    CCV: ''
+  };
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router, public dialogRef: MatDialogRef<PaymentDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) {
@@ -24,8 +29,11 @@ export class PaymentDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  confirm(): void {
-    this.http.post<ITicket>(`${apiUrl}/tickets/book`, this.data.selectedTickets).subscribe()
+  onSubmit(): void {
+    this.http.post<ITicket>(`${apiUrl}/tickets/book`, {
+      cardNumber: this.form.cardNumber,
+      tickets: this.data.selectedTickets
+    }).subscribe()
     this.snackBar.open(`You booked ${this.data.selectedTickets.length} tickets! 🎫`, null, {
       horizontalPosition: 'right',
       duration: 3000

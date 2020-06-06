@@ -1,16 +1,18 @@
 package pl.dmcs.lstarosta.musiceventsapi.controller;
 
-import com.sun.security.auth.UserPrincipal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import pl.dmcs.lstarosta.musiceventsapi.entity.PaymentEntity;
 import pl.dmcs.lstarosta.musiceventsapi.entity.TicketEntity;
 import pl.dmcs.lstarosta.musiceventsapi.message.request.BookTicket;
+import pl.dmcs.lstarosta.musiceventsapi.message.request.BookTicketRequest;
+import pl.dmcs.lstarosta.musiceventsapi.repository.PaymentRepository;
 import pl.dmcs.lstarosta.musiceventsapi.repository.TicketRepository;
-import pl.dmcs.lstarosta.musiceventsapi.security.services.UserPrinciple;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,9 @@ import java.util.Optional;
 public class TicketController {
     @Autowired
     TicketRepository ticketRepository;
+
+    @Autowired
+    PaymentRepository paymentRepository;
 
     @GetMapping()
     public ResponseEntity<List<TicketEntity>> getTickets(@RequestParam(required = false) Optional<Integer> eventId, @RequestParam(required = false) Optional<Integer> userId) {
@@ -41,7 +46,11 @@ public class TicketController {
     }
 
     @PostMapping("/book")
-    public ResponseEntity<TicketEntity> bookTicket(@RequestBody List<BookTicket> bookTickets) {
+    @Transactional
+    public ResponseEntity<TicketEntity> bookTicket(@RequestBody BookTicketRequest bookTicketRequest) {
+        List<BookTicket> bookTickets = bookTicketRequest.getTickets();
+        List<TicketEntity> tickets = new ArrayList<>();
+
         if (bookTickets.size() == 0) return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -54,11 +63,16 @@ public class TicketController {
             Optional<TicketEntity> existingTicket = ticketRepository.isBooked(ticket.getEvent().getId(), ticket.getRow(), ticket.getCol());
             if (!existingTicket.isPresent()) {
                 TicketEntity newTicket = new TicketEntity(ticket.getEvent(), ticket.getUser(), ticket.getCol(), ticket.getRow(), ticket.getEvent().getTicketPrice());
-                ticketRepository.save(newTicket);
+                tickets.add(newTicket);
             } else {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
         }
+
+        PaymentEntity payment = new PaymentEntity(bookTicketRequest.getCardNumber(), bookTicketRequest.getTickets().get(0).getUser(), tickets);
+        paymentRepository.save(payment);
+        ticketRepository.saveAll(tickets);
+
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

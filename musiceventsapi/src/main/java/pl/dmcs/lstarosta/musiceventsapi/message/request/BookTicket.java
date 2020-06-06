@@ -1,6 +1,7 @@
 package pl.dmcs.lstarosta.musiceventsapi.message.request;
 
 import pl.dmcs.lstarosta.musiceventsapi.entity.EventEntity;
+import pl.dmcs.lstarosta.musiceventsapi.entity.PaymentEntity;
 import pl.dmcs.lstarosta.musiceventsapi.entity.UserEntity;
 
 public class BookTicket {
@@ -44,4 +45,5 @@ public class BookTicket {
     public void setCol(int col) {
         this.col = col;
     }
+
 }

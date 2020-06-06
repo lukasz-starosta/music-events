@@ -1,9 +1,9 @@
 <form class="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput type="text" class="form-control" name="email" [(ngModel)]="form.email" #username="ngModel"
+    <input matInput type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel"
            required/>
-    <mat-error *ngIf="f.submitted && username.invalid && username.errors.required">Email is required</mat-error>
+    <mat-error *ngIf="f.submitted && email.invalid && email.errors.required">Email is required</mat-error>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Password</mat-label>

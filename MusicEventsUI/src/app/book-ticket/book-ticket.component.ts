@@ -27,8 +27,8 @@ export class BookTicketComponent implements OnInit {
       this.eventsService.getEvent(params.id).subscribe(event => {
         this.event = event;
         this.userService.getUser().subscribe(user => {
-          for (let row = 0; row < this.event.rows; row++) {
-            for (let col = 0; col < this.event.columns; col++) {
+          for (let row = 1; row <= this.event.rows; row++) {
+            for (let col = 1; col <= this.event.columns; col++) {
               this.tickets.push({row, col, event: this.event, user})
             }
           }
