@@ -18,6 +18,7 @@ export class BookTicketComponent implements OnInit {
   takenTickets: ITicket[] = [];
   selectedTickets: ITicket[] = [];
   event: IEvent;
+  loading = true;
 
   constructor(private route: ActivatedRoute, private dialog: MatDialog, private eventsService: EventsService, private ticketsService: TicketsService, private userService: UserService) {
   }
@@ -35,7 +36,10 @@ export class BookTicketComponent implements OnInit {
         })
       });
 
-      this.ticketsService.getTicketsForEvent(params.id).subscribe(tickets => this.takenTickets = tickets || [])
+      this.ticketsService.getTicketsForEvent(params.id).subscribe(tickets => {
+        this.takenTickets = tickets || []
+        this.loading = false;
+      })
     });
   }
 

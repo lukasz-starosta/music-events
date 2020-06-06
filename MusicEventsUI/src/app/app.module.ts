@@ -29,6 +29,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import { AppLandingComponent } from './app-landing/app-landing.component';
 import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 const routes: Routes = [
   {
@@ -63,24 +64,25 @@ const routes: Routes = [
     AppLandingComponent,
     PaymentDialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule,
-    MatSidenavModule,
-    MatListModule,
-    MatCardModule,
-    MatTabsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTableModule,
-    MatGridListModule,
-    MatSnackBarModule,
-    MatDialogModule
-  ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        FormsModule,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+        BrowserAnimationsModule,
+        MatSidenavModule,
+        MatListModule,
+        MatCardModule,
+        MatTabsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatTableModule,
+        MatGridListModule,
+        MatSnackBarModule,
+        MatDialogModule,
+        MatProgressBarModule
+    ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })

@@ -19,16 +19,19 @@ import {EventsService} from "../services/events.service";
 })
 export class EventsComponent implements OnInit {
   displayedColumns: string[] = ['name', 'city', 'address', 'date', 'musicType', 'ticketPrice', 'actions'];
-  dataSource: IEvent[];
+  dataSource: IEvent[] = [];
   authority: Authority;
   expandedElement: IEvent | null;
+  loading = true;
 
   constructor(private authService: AuthService, private eventsService: EventsService) {
   }
 
   ngOnInit(): void {
     this.authority = this.authService.getAuthority();
-    this.eventsService.getEvents().subscribe(events => this.dataSource = events);
+    this.eventsService.getEvents().subscribe(events => {
+      this.dataSource = events || [];
+      this.loading = false;
+    });
   }
-
 }

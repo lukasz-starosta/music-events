@@ -11,6 +11,7 @@ import {IUser} from "../types/IUser";
 })
 export class TicketsComponent implements OnInit {
   dataSource: ITicket[] = [];
+  loading: boolean = true;
 
   displayedColumns = ['event.name', 'event.date', 'row', 'col', 'price'];
 
@@ -20,6 +21,7 @@ export class TicketsComponent implements OnInit {
     this.userService.getUser().subscribe((user: IUser) => {
       this.ticketsService.getTicketsForUser(user.id.toString()).subscribe(tickets => {
         this.dataSource = tickets || [];
+        this.loading = false;
       })
     })
   }

@@ -37,3 +37,13 @@ table {
 mat-card {
   margin-bottom: 16px;
 }
+
+.no-items {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.no-items::after {
+  content: ' 🕸'
+}

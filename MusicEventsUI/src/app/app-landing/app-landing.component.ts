@@ -12,6 +12,7 @@ import {TicketsService} from "../services/tickets.service";
 export class AppLandingComponent implements OnInit {
   public firstName: string;
   dataSource: ITicket[] = [];
+  loading = true;
 
   displayedColumns = ['event.name', 'event.date', 'row', 'col', 'price'];
 
@@ -23,6 +24,7 @@ export class AppLandingComponent implements OnInit {
       this.firstName = user.firstName;
       this.ticketsService.getUpcomingTicketsForUser(user.id.toString()).subscribe(tickets => {
         this.dataSource = tickets || [];
+        this.loading = false;
       })
     })
   }
