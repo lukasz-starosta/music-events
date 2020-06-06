@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbcc5379-bd63-48a9-a0d5-7118caaecda8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/entity/PaymentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/enums/PaymentStatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/request/BookTicketRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/repository/PaymentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/auth/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/book-ticket/book-ticket.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/MusicEventsUI/src/app/payment-dialog/payment-dialog.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/controller/TicketController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/request/BookTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/message/request/BookTicket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +130,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="12" />
+    <property name="last.edited.regexp" value="1234 1234 1234 1234" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/musiceventsapi/src/main/java/pl/dmcs/lstarosta/musiceventsapi/repository" />
     <property name="nodejs.protractor.protractor_package" value="$PROJECT_DIR$/MusicEventsUI/node_modules/protractor" />
@@ -280,7 +270,7 @@
       <workItem from="1590567045773" duration="6724000" />
       <workItem from="1590697646688" duration="3042000" />
       <workItem from="1590758163144" duration="15128000" />
-      <workItem from="1590931369829" duration="36726000" />
+      <workItem from="1590931369829" duration="37020000" />
     </task>
     <task id="LOCAL-00001" summary="Connected a complete Postgres database to the project">
       <created>1589615894740</created>
@@ -471,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591368250382</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Created a payment entity">
+      <created>1591447377083</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1591447377187</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -499,7 +496,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/MusicEventsUI" />
     </ignored-roots>
-    <MESSAGE value="Generated Persistence entities" />
     <MESSAGE value="Added a few basic routes" />
     <MESSAGE value="Added basic auth functionality" />
     <MESSAGE value="Added JWT" />
@@ -524,7 +520,8 @@
     <MESSAGE value="Fetching tickets for user, removed Mocks" />
     <MESSAGE value="User can book tickets, check auth during booking as well" />
     <MESSAGE value="Correct fields in tickets tables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Correct fields in tickets tables" />
+    <MESSAGE value="Created a payment entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a payment entity" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#Assign_Data_Sources" timestamp="1589616317445">
@@ -579,11 +576,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="707" y="362" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1590228978961" />
-    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1591368248074">
+    <state x="507" y="119" key="CommitChangelistDialog2" timestamp="1591447373045">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="507" y="119" key="CommitChangelistDialog2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707456249" />
-    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591368248074" />
+    <state x="507" y="119" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1591447373045" />
     <state width="431" height="466" key="DebuggerActiveHint" timestamp="1591445544092">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -592,46 +589,46 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="739" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1590229020220" />
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom" timestamp="1591447360040">
+    <state width="1877" height="288" key="GridCell.Tab.0.bottom" timestamp="1591447886525">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360040" />
-    <state width="1877" height="288" key="GridCell.Tab.0.center" timestamp="1591447360038">
+    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886525" />
+    <state width="1877" height="288" key="GridCell.Tab.0.center" timestamp="1591447886524">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360038" />
-    <state width="1877" height="288" key="GridCell.Tab.0.left" timestamp="1591447360037">
+    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886524" />
+    <state width="1877" height="288" key="GridCell.Tab.0.left" timestamp="1591447886524">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360037" />
-    <state width="1877" height="288" key="GridCell.Tab.0.right" timestamp="1591447360039">
+    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886524" />
+    <state width="1877" height="288" key="GridCell.Tab.0.right" timestamp="1591447886524">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360039" />
-    <state width="1877" height="288" key="GridCell.Tab.1.bottom" timestamp="1591447360040">
+    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886524" />
+    <state width="1877" height="288" key="GridCell.Tab.1.bottom" timestamp="1591447886525">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360040" />
-    <state width="1877" height="288" key="GridCell.Tab.1.center" timestamp="1591447360040">
+    <state width="1877" height="288" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886525" />
+    <state width="1877" height="288" key="GridCell.Tab.1.center" timestamp="1591447886525">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360040" />
-    <state width="1877" height="288" key="GridCell.Tab.1.left" timestamp="1591447360040">
+    <state width="1877" height="288" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886525" />
+    <state width="1877" height="288" key="GridCell.Tab.1.left" timestamp="1591447886525">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360040" />
-    <state width="1877" height="288" key="GridCell.Tab.1.right" timestamp="1591447360040">
+    <state width="1877" height="288" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886525" />
+    <state width="1877" height="288" key="GridCell.Tab.1.right" timestamp="1591447886525">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="285" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707475658" />
-    <state width="1877" height="288" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591447360040" />
+    <state width="1877" height="288" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1591447886525" />
     <state width="1877" height="352" key="GridCell.Tab.2.bottom" timestamp="1591445574697">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -657,11 +654,11 @@
     </state>
     <state x="440" y="99" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589700971276" />
     <state x="440" y="99" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1590925918403" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1591368277342">
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2" timestamp="1591447403887">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589707461872" />
-    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1591368277342" />
+    <state x="552" y="258" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1591447403887" />
     <state x="776" y="303" key="chooseDestDirectoryDialog" timestamp="1589616128618">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -683,10 +680,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="616" y="243" width="672" height="677" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591211957552" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1591446982407">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1591447798959">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589706945569" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591446982407" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1591447798959" />
   </component>
 </project>

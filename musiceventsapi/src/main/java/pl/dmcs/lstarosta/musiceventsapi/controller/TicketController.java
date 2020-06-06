@@ -17,6 +17,7 @@ import pl.dmcs.lstarosta.musiceventsapi.repository.TicketRepository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -67,6 +68,10 @@ public class TicketController {
             } else {
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
+        }
+
+        if (!Pattern.matches("[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}", bookTicketRequest.getCardNumber())) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
         PaymentEntity payment = new PaymentEntity(bookTicketRequest.getCardNumber(), bookTicketRequest.getTickets().get(0).getUser(), tickets);
