@@ -18,7 +18,7 @@ import {EventsService} from "../services/events.service";
   ],
 })
 export class EventsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'city', 'address', 'date', 'musicType', 'actions'];
+  displayedColumns: string[] = ['name', 'city', 'address', 'date', 'musicType', 'ticketPrice', 'actions'];
   dataSource: IEvent[];
   authority: Authority;
   expandedElement: IEvent | null;

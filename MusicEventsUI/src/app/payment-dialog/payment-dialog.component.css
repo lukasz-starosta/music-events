@@ -6,6 +6,11 @@ mat-dialog-content {
   margin: 0px auto;
 }
 
+mat-form-field {
+  width: 60vw;
+  max-width: 600px;
+}
+
 input {
   width: 100%;
 }

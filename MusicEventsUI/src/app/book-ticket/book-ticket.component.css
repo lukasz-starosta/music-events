@@ -5,9 +5,13 @@
 }
 .seat {
   height: 30px;
-  width: 50px;
+  width: 34px;
   border-radius: 4px;
   box-shadow: 0 8px 0 -12px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-content {
+  overflow: auto;
 }
 
 .seat-taken {

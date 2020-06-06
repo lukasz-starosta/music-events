@@ -1,11 +1,11 @@
 <mat-card>
-  <mat-card-title>Book a ticket {{event ? 'for ' + event.name : ''}}</mat-card-title>
+  <mat-card-title>Book a ticket {{event ? 'for ' + event.name : ''}} for only <span class="price">{{event && event.ticketPrice}}PLN</span> each!</mat-card-title>
 </mat-card>
 
 <mat-card>
   <mat-card-title>Choose your seats</mat-card-title>
   <mat-card-content>
-    <mat-grid-list style="width: {{event ? event.columns * 60 : 0}}px" cols="{{event && event.columns}}" gutterSize="8px" rowHeight="34px">
+    <mat-grid-list style="width: {{event ? event.columns * 40 : 0}}px" cols="{{event && event.columns}}" gutterSize="8px" rowHeight="34px">
       <mat-grid-tile
         *ngFor="let ticket of tickets">
         <div class="seat" [ngClass]="isTicketTaken(ticket) ? 'seat-taken' : isTicketSelected(ticket) ? 'seat-selected' : 'seat-free'" (click)="handleTicketClick(ticket)"></div>
@@ -14,6 +14,7 @@
   </mat-card-content>
   <mat-card-actions>
     <span>{{selectedTickets.length}} seats chosen</span>
+    <span>Total price <span class="price">{{selectedTickets.length * (event ? event.ticketPrice : 0)}}PLN</span></span>
     <button mat-raised-button color="warn" routerLink="../..">Cancel</button>
     <button mat-raised-button color="primary" [disabled]="selectedTickets.length === 0" (click)="book()">Book</button>
   </mat-card-actions>
