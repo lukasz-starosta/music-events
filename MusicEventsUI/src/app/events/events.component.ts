@@ -34,4 +34,8 @@ export class EventsComponent implements OnInit {
       this.loading = false;
     });
   }
+
+  public isEventUpcoming(event: IEvent): boolean {
+    return new Date(event.date) >= new Date();
+  }
 }

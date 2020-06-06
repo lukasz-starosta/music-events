@@ -33,12 +33,13 @@ export class PaymentDialogComponent implements OnInit {
     this.http.post<ITicket>(`${apiUrl}/tickets/book`, {
       cardNumber: this.form.cardNumber,
       tickets: this.data.selectedTickets
-    }).subscribe()
-    this.snackBar.open(`You booked ${this.data.selectedTickets.length} tickets! 🎫`, null, {
-      horizontalPosition: 'right',
-      duration: 3000
-    });
+    }).subscribe(_ => {
+      this.snackBar.open(`You booked ${this.data.selectedTickets.length} tickets! 🎫`, null, {
+        horizontalPosition: 'right',
+        duration: 3000
+      });
+      this.router.navigateByUrl('/app').catch(console.error)
+    })
     this.dialogRef.close();
-    this.router.navigateByUrl('/app').catch(console.error)
   }
 }

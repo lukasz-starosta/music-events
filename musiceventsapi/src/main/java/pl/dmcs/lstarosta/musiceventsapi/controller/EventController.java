@@ -20,7 +20,7 @@ public class EventController {
 
     @GetMapping()
     public ResponseEntity<List<EventEntity>> getEvents() {
-        return new ResponseEntity<List<EventEntity>>(eventRepository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<List<EventEntity>>(eventRepository.findAllByOrderByDateDesc(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

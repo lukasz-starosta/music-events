@@ -34,6 +34,5 @@ export class LayoutComponent implements OnInit {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigateByUrl('/').catch(console.error);
   }
 }
