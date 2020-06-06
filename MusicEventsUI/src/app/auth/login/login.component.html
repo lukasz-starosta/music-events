@@ -1,7 +1,8 @@
 <form class="form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput type="text" class="form-control" name="email" [(ngModel)]="form.email" #email="ngModel"
+    <input matInput type="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" name="email"
+           [(ngModel)]="form.email" #email="ngModel"
            required/>
     <mat-error *ngIf="f.submitted && email.invalid && email.errors.required">Email is required</mat-error>
   </mat-form-field>

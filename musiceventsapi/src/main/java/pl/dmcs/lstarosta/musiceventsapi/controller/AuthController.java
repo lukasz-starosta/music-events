@@ -23,6 +23,7 @@ import pl.dmcs.lstarosta.musiceventsapi.security.jwt.JwtProvider;
 
 import javax.validation.Valid;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
@@ -51,14 +52,18 @@ public class AuthController {
         String jwt = jwtProvider.generateJwtToken(authentication);
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 
-        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getUsername(), userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
+        if (!Pattern.matches("^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$", signUpRequest.getEmail())) {
+            return new ResponseEntity<>(new ResponseMessage("Wrong email"), HttpStatus.BAD_REQUEST);
+        }
         if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             return new ResponseEntity<>(new ResponseMessage("Email is already taken."), HttpStatus.BAD_REQUEST);
         }
+
 
         RoleEntity userRole = roleRepository.findByName(RoleEnum.user)
                 .orElseThrow(() -> new RuntimeException("Fail -> Cause: User Role not found."));

@@ -35,7 +35,7 @@ export class InterceptorService implements HttpInterceptor {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 403) {
             this.authService.logout();
-            this.errorSnackbarService.showErrorSnackbar('Please log in again.');
+            this.errorSnackbarService.showErrorSnackbar('Authorization failed. Please log in again.');
           } else {
             this.errorSnackbarService.showErrorSnackbar('Something went wrong. Try again. ❌')
           }
