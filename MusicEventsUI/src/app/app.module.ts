@@ -32,6 +32,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { AddEventComponent } from './add-event/add-event.component';
 import { EditEventComponent } from './edit-event/edit-event.component';
+import {MatSortModule} from "@angular/material/sort";
 
 const routes: Routes = [
   {
@@ -68,25 +69,26 @@ const routes: Routes = [
     AddEventComponent,
     EditEventComponent,
   ],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        FormsModule,
-        HttpClientModule,
-        RouterModule.forRoot(routes),
-        BrowserAnimationsModule,
-        MatSidenavModule,
-        MatListModule,
-        MatCardModule,
-        MatTabsModule,
-        MatInputModule,
-        MatButtonModule,
-        MatTableModule,
-        MatGridListModule,
-        MatSnackBarModule,
-        MatDialogModule,
-        MatProgressBarModule
-    ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes),
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatCardModule,
+    MatTabsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+    MatGridListModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    MatProgressBarModule,
+    MatSortModule
+  ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })

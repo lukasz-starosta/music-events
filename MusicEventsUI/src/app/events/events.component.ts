@@ -8,6 +8,7 @@ import {MatDialog} from "@angular/material/dialog";
 import {AddEventComponent} from "../add-event/add-event.component";
 import {MatTable} from "@angular/material/table";
 import {EditEventComponent} from "../edit-event/edit-event.component";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-events',
@@ -24,10 +25,12 @@ import {EditEventComponent} from "../edit-event/edit-event.component";
 export class EventsComponent implements OnInit {
   displayedColumns: string[] = ['name', 'city', 'address', 'date', 'musicType', 'ticketPrice', 'actions'];
   dataSource: IEvent[] = [];
+  events: IEvent[] = [];
   authority: Authority;
   expandedElement: IEvent | null;
   loading = true;
   @ViewChild(MatTable) table: MatTable<IEvent>;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private authService: AuthService, private eventsService: EventsService, private dialog: MatDialog) {
   }
@@ -41,8 +44,21 @@ export class EventsComponent implements OnInit {
     this.loading = true;
     this.eventsService.getEvents().subscribe(events => {
       this.dataSource = events || [];
+      this.events = events || [];
       this.loading = false;
     });
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    if (filterValue === '') return;
+
+    this.dataSource = this.events.filter(event => {
+      const searchString = event.name + ' ' + event.city + ' ' + event.musicType + ' ' + event.address
+        + ' ' + event.description;
+      return searchString.toLowerCase().includes(filterValue.trim().toLowerCase());
+    });
+    this.table.renderRows();
   }
 
   pushEvent(event: IEvent): void {
