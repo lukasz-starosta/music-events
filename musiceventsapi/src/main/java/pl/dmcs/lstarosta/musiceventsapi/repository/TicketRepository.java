@@ -18,10 +18,10 @@ interface TicketRepositoryCustom {
     @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId")
     Optional<List<TicketEntity>> findByEventId(@Param("eventId") Long eventId);
 
-    @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId")
+    @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId ORDER BY t.event.date DESC")
     Optional<List<TicketEntity>> findByUserId(@Param("userId") Integer userId);
 
-    @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId AND t.event.date >= current_date ")
+    @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId AND t.event.date >= current_date ORDER BY t.event.date ASC")
     Optional<List<TicketEntity>> findUpcomingTicketsForUser(@Param("userId") Integer userId);
 
     @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId AND t.row = :row AND t.col = :col")

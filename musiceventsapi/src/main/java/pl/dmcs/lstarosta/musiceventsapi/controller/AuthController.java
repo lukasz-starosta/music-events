@@ -72,7 +72,7 @@ public class AuthController {
 
         userRepository.save(user);
 
-        return new ResponseEntity<>(new ResponseMessage("Registered user."), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseMessage("Successfully registered. You can now log in."), HttpStatus.OK);
     }
 
 }

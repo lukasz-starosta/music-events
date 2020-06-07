@@ -11,8 +11,6 @@ import {Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   form: ILogin = {email: '', password: ''};
-  isLoginFailed = false;
-  errorMessage = '';
   roles: string[] = [];
   private loginInfo: ILogin;
 
@@ -33,14 +31,9 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUsername(data.username);
         this.tokenStorage.saveAuthorities(data.authorities);
 
-        this.isLoginFailed = false;
         this.roles = this.tokenStorage.getAuthorities();
 
         this.router.navigateByUrl('/app').catch(e => console.error(e));
-      },
-      error => {
-        this.errorMessage = error.error.message;
-        this.isLoginFailed = true;
       }
     );
   }

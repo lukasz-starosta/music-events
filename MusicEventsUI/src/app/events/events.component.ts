@@ -62,7 +62,7 @@ export class EventsComponent implements OnInit {
   }
 
   pushEvent(event: IEvent): void {
-    this.dataSource.push(event);
+    this.dataSource.unshift(event);
     this.table.renderRows();
   }
 
