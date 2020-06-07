@@ -30,6 +30,7 @@ import { AppLandingComponent } from './app-landing/app-landing.component';
 import { PaymentDialogComponent } from './payment-dialog/payment-dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { AddEventComponent } from './add-event/add-event.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,7 @@ const routes: Routes = [
     BookTicketComponent,
     AppLandingComponent,
     PaymentDialogComponent,
+    AddEventComponent,
   ],
     imports: [
         BrowserModule,

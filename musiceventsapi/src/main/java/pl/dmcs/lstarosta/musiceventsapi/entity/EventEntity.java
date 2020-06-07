@@ -1,5 +1,7 @@
 package pl.dmcs.lstarosta.musiceventsapi.entity;
 
+import pl.dmcs.lstarosta.musiceventsapi.message.request.NewEvent;
+
 import javax.persistence.*;
 import java.sql.Date;
 
@@ -12,6 +14,18 @@ public class EventEntity {
     private Date date;
 
     public EventEntity() {
+    }
+
+    public EventEntity(NewEvent newEvent) {
+        this.setName(newEvent.getName());
+        this.setCity(newEvent.getCity());
+        this.setAddress(newEvent.getAddress());
+        this.setDate(newEvent.getDate());
+        this.setColumns(newEvent.getColumns());
+        this.setRows(newEvent.getRows());
+        this.setMusicType(newEvent.getMusicType());
+        this.setTicketPrice(newEvent.getTicketPrice());
+        this.setDescription(newEvent.getDescription());
     }
 
     @Id

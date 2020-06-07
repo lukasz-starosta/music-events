@@ -8,6 +8,7 @@ import {TokenStorageService} from "./token-storage.service";
 import {Authority} from "../types/Authority";
 import {apiUrl} from "../constants";
 import {Router} from "@angular/router";
+import {UserService} from "./user.service";
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -22,7 +23,7 @@ export class AuthService {
   private signUpUrl = this.authUrl + '/signup';
   private loginUrl = this.authUrl + '/login';
 
-  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService, private router: Router) {
+  constructor(private http: HttpClient, private tokenStorageService: TokenStorageService, private router: Router, private userService: UserService) {
   }
 
   isUser(): boolean {
@@ -52,6 +53,7 @@ export class AuthService {
   }
 
   logout(): void {
+    this.userService.clearUser();
     this.router.navigateByUrl('/').catch(console.error);
     return this.tokenStorageService.logout();
   }

@@ -3,15 +3,12 @@
     <button class="logo" mat-button color="accent" [routerLink]="['/']">MUSIVA</button>
     <mat-nav-list class="mat-nav-list">
       <a class="button-link" mat-list-item [routerLink]="['/app']" [class.selected]="router.url === '/app'">Home</a>
-      <a class="button-link" mat-list-item [routerLink]="['/app/events']" [class.selected]="router.url === '/app/events'">Events</a>
-      <a class="button-link" mat-list-item [routerLink]="['/app/tickets']" [class.selected]="router.url === '/app/tickets'">Tickets</a>
-      <div *ngIf="authority === 'admin'">
-        <a class="button-link" mat-list-item [routerLink]="['/app/users']" [class.selected]="router.url === '/app/users'">Users</a>
-      </div>
-
-      <div *ngIf="authority === 'user'">
-        <a class="button-link" mat-list-item [routerLink]="['/app/profile']" [class.selected]="router.url === '/app/profile'">Profile</a>
-      </div>
+      <a class="button-link" mat-list-item [routerLink]="['/app/events']"
+         [class.selected]="router.url === '/app/events'">Events</a>
+      <a class="button-link" mat-list-item [routerLink]="['/app/tickets']"
+         [class.selected]="router.url === '/app/tickets'">Tickets</a>
+      <a *ngIf="authority === 'user'" class="button-link" mat-list-item [routerLink]="['/app/profile']"
+         [class.selected]="router.url === '/app/profile'">Profile</a>
     </mat-nav-list>
     <button class="logout" mat-raised-button color="warn" (click)="logout()">Logout</button>
   </mat-sidenav>

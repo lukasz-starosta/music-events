@@ -1,9 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Authority} from "../types/Authority";
 import {AuthService} from "../services/auth.service";
 import {animate, state, style, transition, trigger} from "@angular/animations";
 import {IEvent} from "../types/IEvent";
 import {EventsService} from "../services/events.service";
+import {MatDialog} from "@angular/material/dialog";
+import {AddEventComponent} from "../add-event/add-event.component";
+import {MatTable} from "@angular/material/table";
 
 @Component({
   selector: 'app-events',
@@ -23,19 +26,34 @@ export class EventsComponent implements OnInit {
   authority: Authority;
   expandedElement: IEvent | null;
   loading = true;
+  @ViewChild(MatTable) table: MatTable<IEvent>;
 
-  constructor(private authService: AuthService, private eventsService: EventsService) {
+  constructor(private authService: AuthService, private eventsService: EventsService, private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
     this.authority = this.authService.getAuthority();
+    this.fetchEvents();
+  }
+
+  fetchEvents(): void {
+    this.loading = true;
     this.eventsService.getEvents().subscribe(events => {
       this.dataSource = events || [];
       this.loading = false;
     });
   }
 
+  pushEvent(event: IEvent): void {
+    this.dataSource.push(event);
+    this.table.renderRows();
+  }
+
   public isEventUpcoming(event: IEvent): boolean {
     return new Date(event.date) >= new Date();
+  }
+
+  handleAddEvent() {
+    this.dialog.open(AddEventComponent, {data: {callback: this.pushEvent.bind(this)}});
   }
 }

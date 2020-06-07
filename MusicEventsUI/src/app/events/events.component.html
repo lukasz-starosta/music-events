@@ -1,15 +1,18 @@
 <mat-card>
-  <mat-card-title>Events</mat-card-title>
+  <mat-card-title><span>Events</span>
+    <button mat-raised-button color="primary" (click)="handleAddEvent()" *ngIf="authority==='admin'">Add event</button>
+  </mat-card-title>
 </mat-card>
 
 <mat-card *ngIf="!dataSource.length || loading">
   <mat-card-content class="no-items" *ngIf="!dataSource.length">No events</mat-card-content>
   <mat-card-content *ngIf="loading">
-    <mat-progress-bar  mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </mat-card-content>
 </mat-card>
 
-<table *ngIf="dataSource.length" mat-table [dataSource]="dataSource" class="mat-elevation-z8 table" multiTemplateDataRows>
+<table *ngIf="dataSource.length" mat-table [dataSource]="dataSource" class="mat-elevation-z8 table"
+       multiTemplateDataRows>
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef>Name</th>
     <td mat-cell *matCellDef="let event"> {{event.name}} </td>
@@ -43,7 +46,8 @@
   <ng-container matColumnDef="actions">
     <th mat-header-cell *matHeaderCellDef>Actions</th>
     <td mat-cell class="actions" *matCellDef="let event">
-      <button mat-raised-button color="primary" *ngIf="authority === 'user' && isEventUpcoming(event)" [routerLink]="[event.id, 'book-ticket']">
+      <button mat-raised-button color="primary" *ngIf="authority === 'user' && isEventUpcoming(event)"
+              [routerLink]="[event.id, 'book-ticket']">
         Book
       </button>
       <button mat-raised-button color="accent" *ngIf="authority === 'admin' && isEventUpcoming(event)">Edit</button>

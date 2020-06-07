@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.dmcs.lstarosta.musiceventsapi.entity.EventEntity;
+import pl.dmcs.lstarosta.musiceventsapi.message.request.NewEvent;
 import pl.dmcs.lstarosta.musiceventsapi.repository.EventRepository;
 
 import java.util.List;
@@ -28,5 +29,12 @@ public class EventController {
         Optional<EventEntity> event = eventRepository.findById(id);
         if (!event.isPresent()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         return new ResponseEntity<EventEntity>(event.get(), HttpStatus.OK);
+    }
+
+    @PostMapping()
+    public ResponseEntity<EventEntity> addEvent(@RequestBody NewEvent newEvent) {
+        EventEntity event = new EventEntity(newEvent);
+        eventRepository.save(event);
+        return new ResponseEntity<>(event, HttpStatus.OK);
     }
 }

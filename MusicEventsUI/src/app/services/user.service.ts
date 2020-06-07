@@ -19,6 +19,10 @@ export class UserService {
     return this.http.get<IUser>(`${apiUrl}/user/${email}`);
   }
 
+  clearUser(): void {
+    this.user = undefined;
+  }
+
   getUser(): Observable<IUser> {
     return new Observable<IUser>(observer => {
         if (!this.user) {
