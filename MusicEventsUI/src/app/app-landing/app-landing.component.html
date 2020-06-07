@@ -1,11 +1,18 @@
-<mat-card class="title-card">
+<mat-card *ngIf="authority === 'user'" class="title-card">
   <mat-card-title>Hello {{firstName}},</mat-card-title>
   <mat-card-content class="title-card-text">
     <h3>See all of your upcoming events below or go to Events to book more!</h3>
   </mat-card-content>
 </mat-card>
 
-<mat-card>
+<mat-card *ngIf="authority === 'admin'" class="title-card">
+  <mat-card-title>Welcome {{firstName}},</mat-card-title>
+  <mat-card-content class="title-card-text">
+    <h3>Create, edit or cancel events!</h3>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="authority === 'user'">
   <mat-card-title>Upcoming events</mat-card-title>
 
   <mat-card-content *ngIf="!dataSource.length || loading">

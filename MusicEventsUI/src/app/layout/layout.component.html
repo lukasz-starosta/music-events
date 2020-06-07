@@ -5,7 +5,7 @@
       <a class="button-link" mat-list-item [routerLink]="['/app']" [class.selected]="router.url === '/app'">Home</a>
       <a class="button-link" mat-list-item [routerLink]="['/app/events']"
          [class.selected]="router.url === '/app/events'">Events</a>
-      <a class="button-link" mat-list-item [routerLink]="['/app/tickets']"
+      <a *ngIf="authority === 'user'" class="button-link" mat-list-item [routerLink]="['/app/tickets']"
          [class.selected]="router.url === '/app/tickets'">Tickets</a>
       <a *ngIf="authority === 'user'" class="button-link" mat-list-item [routerLink]="['/app/profile']"
          [class.selected]="router.url === '/app/profile'">Profile</a>
