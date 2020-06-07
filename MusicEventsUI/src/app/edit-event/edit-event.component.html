@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Add event</h1>
+<h1 mat-dialog-title>Edit event</h1>
 <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
   <mat-dialog-content>
     <mat-form-field appearance="outline">
@@ -19,27 +19,30 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Date</mat-label>
-      <input matInput name="date" type="date" required [min]="today" [(ngModel)]="form.date" #date="ngModel">
+      <input matInput name="date" type="date" required [(ngModel)]="form.date" [min]="today" #date="ngModel">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Ticket price [PLN]</mat-label>
-      <input matInput name="ticketPrice" type="number" min="1" required [(ngModel)]="form.ticketPrice" #ticketPrice="ngModel">
+      <input disabled matInput name="ticketPrice" type="number" min="1" required [(ngModel)]="form.ticketPrice"
+             #ticketPrice="ngModel">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Audience rows</mat-label>
-      <input matInput name="rows" type="number" min="1" required [(ngModel)]="form.rows" #rows="ngModel">
+      <input matInput disabled name="rows" type="number" min="1" required [(ngModel)]="form.rows" #rows="ngModel">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Audience columns</mat-label>
-      <input matInput name="columns" type="number" min="1" required [(ngModel)]="form.columns" #columns="ngModel">
+      <input matInput disabled name="columns" type="number" min="1" required [(ngModel)]="form.columns"
+             #columns="ngModel">
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Description</mat-label>
-      <textarea matInput matTextareaAutosize name="description" required [(ngModel)]="form.description" #description="ngModel"></textarea>
+      <textarea matInput matTextareaAutosize name="description" required [(ngModel)]="form.description"
+                #description="ngModel"></textarea>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>

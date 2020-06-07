@@ -1,0 +1,12 @@
+mat-dialog-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

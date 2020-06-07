@@ -6,6 +6,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {IEvent} from "../types/IEvent";
+import today from "../utils/today";
 
 @Component({
   selector: 'app-add-event',
@@ -26,6 +27,8 @@ export class AddEventComponent implements OnInit {
 
     description: '',
   };
+
+  public today = today();
 
   constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router, public dialogRef: MatDialogRef<AddEventComponent>, @Inject(MAT_DIALOG_DATA) public data: { callback: (event: IEvent) => void }) {
   }

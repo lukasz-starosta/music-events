@@ -16,7 +16,7 @@ public interface TicketRepository extends JpaRepository<TicketEntity, Long>, Tic
 @Repository
 interface TicketRepositoryCustom {
     @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId")
-    Optional<List<TicketEntity>> findByEventId(@Param("eventId") Integer eventId);
+    Optional<List<TicketEntity>> findByEventId(@Param("eventId") Long eventId);
 
     @Query("SELECT t FROM TicketEntity t WHERE t.user.id = :userId")
     Optional<List<TicketEntity>> findByUserId(@Param("userId") Integer userId);
@@ -25,5 +25,5 @@ interface TicketRepositoryCustom {
     Optional<List<TicketEntity>> findUpcomingTicketsForUser(@Param("userId") Integer userId);
 
     @Query("SELECT t FROM TicketEntity t WHERE t.event.id = :eventId AND t.row = :row AND t.col = :col")
-    Optional<TicketEntity> isBooked(@Param("eventId") Integer eventId, @Param("row") Integer row, @Param("col") Integer col);
+    Optional<TicketEntity> isBooked(@Param("eventId") Long eventId, @Param("row") Integer row, @Param("col") Integer col);
 }

@@ -30,7 +30,7 @@ public class TicketController {
     PaymentRepository paymentRepository;
 
     @GetMapping()
-    public ResponseEntity<List<TicketEntity>> getTickets(@RequestParam(required = false) Optional<Integer> eventId, @RequestParam(required = false) Optional<Integer> userId) {
+    public ResponseEntity<List<TicketEntity>> getTickets(@RequestParam(required = false) Optional<Long> eventId, @RequestParam(required = false) Optional<Integer> userId) {
 
         Optional<List<TicketEntity>> tickets = Optional.of(new ArrayList<TicketEntity>());
 

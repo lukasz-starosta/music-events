@@ -8,7 +8,7 @@ import java.sql.Date;
 @Entity
 @Table(name = "event", schema = "public", catalog = "MusicEvents")
 public class EventEntity {
-    private int id;
+    private Long id;
     private String name;
     private String city;
     private Date date;
@@ -31,11 +31,11 @@ public class EventEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -71,14 +71,6 @@ public class EventEntity {
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
 
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        return result;
     }
 
     @Basic

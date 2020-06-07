@@ -37,4 +37,14 @@ public class EventController {
         eventRepository.save(event);
         return new ResponseEntity<>(event, HttpStatus.OK);
     }
+
+    @PatchMapping()
+    public ResponseEntity<EventEntity> editEvent(@RequestBody EventEntity newEvent) {
+        Optional<EventEntity> event = eventRepository.findById(newEvent.getId());
+        if (!event.isPresent()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        eventRepository.save(newEvent);
+        return new ResponseEntity<>(event.get(), HttpStatus.OK);
+    }
 }

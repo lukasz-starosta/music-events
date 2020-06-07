@@ -7,6 +7,7 @@ import {EventsService} from "../services/events.service";
 import {MatDialog} from "@angular/material/dialog";
 import {AddEventComponent} from "../add-event/add-event.component";
 import {MatTable} from "@angular/material/table";
+import {EditEventComponent} from "../edit-event/edit-event.component";
 
 @Component({
   selector: 'app-events',
@@ -55,5 +56,16 @@ export class EventsComponent implements OnInit {
 
   handleAddEvent() {
     this.dialog.open(AddEventComponent, {data: {callback: this.pushEvent.bind(this)}});
+  }
+
+  handleEditEvent(event: IEvent) {
+    this.dialog.open(EditEventComponent, {
+      data: {
+        eventId: event.id, callback: () => {
+          this.fetchEvents();
+          this.table.renderRows();
+        }
+      }
+    })
   }
 }
