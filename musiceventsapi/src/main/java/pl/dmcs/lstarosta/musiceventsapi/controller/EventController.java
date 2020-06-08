@@ -31,14 +31,14 @@ public class EventController {
         return new ResponseEntity<EventEntity>(event.get(), HttpStatus.OK);
     }
 
-    @PostMapping()
+    @PostMapping("/admin")
     public ResponseEntity<EventEntity> addEvent(@RequestBody NewEvent newEvent) {
         EventEntity event = new EventEntity(newEvent);
         eventRepository.save(event);
         return new ResponseEntity<>(event, HttpStatus.OK);
     }
 
-    @PatchMapping()
+    @PatchMapping("/admin")
     public ResponseEntity<EventEntity> editEvent(@RequestBody EventEntity newEvent) {
         Optional<EventEntity> event = eventRepository.findById(newEvent.getId());
         if (!event.isPresent()) {

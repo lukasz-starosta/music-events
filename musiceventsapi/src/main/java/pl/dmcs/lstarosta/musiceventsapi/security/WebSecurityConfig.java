@@ -58,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 authorizeRequests()
                 .antMatchers("/restApi/auth/**").permitAll()
                 .antMatchers("/restApi/user/**").hasAnyAuthority(RoleEnum.user.name(), RoleEnum.admin.name())
+                .antMatchers("/restApi/events/admin/**").hasAuthority(RoleEnum.admin.name())
                 .antMatchers("/restApi/events/**").hasAnyAuthority(RoleEnum.user.name(), RoleEnum.admin.name())
                 .antMatchers("/restApi/tickets/**").hasAnyAuthority(RoleEnum.user.name(), RoleEnum.admin.name())
                 .anyRequest().authenticated()

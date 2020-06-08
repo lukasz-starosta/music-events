@@ -30,7 +30,8 @@ export class EventsComponent implements OnInit {
   expandedElement: IEvent | null;
   loading = true;
   @ViewChild(MatTable) table: MatTable<IEvent>;
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
+  sortByDateDesc: boolean = false;
+  sortByPriceDesc: boolean = false;
 
   constructor(private authService: AuthService, private eventsService: EventsService, private dialog: MatDialog) {
   }
@@ -47,6 +48,33 @@ export class EventsComponent implements OnInit {
       this.events = events || [];
       this.loading = false;
     });
+  }
+
+  sortByDate(): void {
+    this.dataSource = this.events.sort((a, b) => {
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+
+      if (this.sortByDateDesc) {
+        return dateA > dateB ? -1 : dateA < dateB ? 1 : 0;
+      }
+      return dateA > dateB ? 1 : dateA < dateB ? -1 : 0;
+    });
+    this.table.renderRows();
+
+    this.sortByDateDesc = !this.sortByDateDesc;
+  }
+
+  sortByPrice(): void {
+    this.dataSource = this.events.sort((a, b) => {
+      if (this.sortByPriceDesc) {
+        return a.ticketPrice > b.ticketPrice ? -1 : a.ticketPrice < b.ticketPrice ? 1 : 0;
+      }
+      return a.ticketPrice > b.ticketPrice ? 1 : a.ticketPrice < b.ticketPrice ? -1 : 0;
+    });
+    this.table.renderRows();
+
+    this.sortByPriceDesc = !this.sortByPriceDesc;
   }
 
   applyFilter(event: Event) {

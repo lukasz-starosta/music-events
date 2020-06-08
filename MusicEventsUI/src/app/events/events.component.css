@@ -12,6 +12,11 @@ mat-card-title {
   align-items: center;
 }
 
+.sorter {
+  cursor: pointer;
+  font-weight: bold;
+}
+
 .actions {
   display: flex;
   justify-content: space-around;

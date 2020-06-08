@@ -37,7 +37,7 @@ export class AddEventComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.http.post<IEvent>(`${apiUrl}/events`, this.form).subscribe((event: IEvent) => {
+    this.http.post<IEvent>(`${apiUrl}/events/admin`, this.form).subscribe((event: IEvent) => {
       this.snackBar.open(`Created a new event! 🎶`, null, {
         horizontalPosition: 'right',
         duration: 3000

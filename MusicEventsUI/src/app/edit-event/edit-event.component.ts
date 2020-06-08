@@ -39,7 +39,7 @@ export class EditEventComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.http.patch<IEvent>(`${apiUrl}/events`, this.form).subscribe((event: IEvent) => {
+    this.http.patch<IEvent>(`${apiUrl}/events/admin`, this.form).subscribe((event: IEvent) => {
       this.snackBar.open(`Edited an event! 🎶`, null, {
         horizontalPosition: 'right',
         duration: 3000
